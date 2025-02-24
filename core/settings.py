@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'rest_framework_simplejwt',
     'drf_spectacular',
+
+    #user defined models
+    'custom_auth',
 ]
 
 MIDDLEWARE = [
@@ -183,7 +186,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SITE_ID = 1
 
 
-AUTH_USER_MODEL = 'auth.User'
+AUTH_USER_MODEL = 'custom_auth.User'
 
 ACCOUNT_USER_MODEL_USERNAME_FIELD=None
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
@@ -196,7 +199,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 SOCIALACCOUNT_PROVIDERS = {}
 ACCOUNT_USERNAME_REQUIRED=False
 
-SOCIALACCOUNT_ADAPTER = 'auth.adapters.MySocialAccountAdapter'
+SOCIALACCOUNT_ADAPTER = 'custom_auth.adapters.MySocialAccountAdapter'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

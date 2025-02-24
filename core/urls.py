@@ -6,7 +6,7 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-from auth.views import CustomTokenObtainPairView
+from custom_auth.views import CustomTokenObtainPairView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
