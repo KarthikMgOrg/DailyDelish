@@ -1,0 +1,138 @@
+-----------------------------
+-- Create ENUM Types
+-----------------------------
+CREATE TYPE delivery_frequency AS ENUM ('weekly', 'biweekly', 'monthly');
+CREATE TYPE subscription_status AS ENUM ('active', 'paused', 'cancelled');
+CREATE TYPE unit_type AS ENUM ('per_item', 'per_kg');
+CREATE TYPE order_status AS ENUM ('pending', 'processed', 'shipped', 'delivered', 'cancelled');
+CREATE TYPE delivery_status AS ENUM ('pending', 'delivered', 'failed');
+CREATE TYPE payment_method AS ENUM ('credit_card', 'debit_card', 'paypal', 'other');
+CREATE TYPE payment_status AS ENUM ('pending', 'completed', 'failed', 'refunded');
+
+-----------------------------
+-- Create Tables
+-----------------------------
+-- Users Table
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password_hash VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Delivery Addresses Table
+CREATE TABLE delivery_addresses (
+    address_id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
+    street_address TEXT NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    state VARCHAR(100),
+    postal_code VARCHAR(20) NOT NULL,
+    country VARCHAR(100) NOT NULL,
+    is_default BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Product Categories Table
+CREATE TABLE product_categories (
+    category_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Products Table
+CREATE TABLE products (
+    product_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    price NUMERIC(10, 2) NOT NULL,
+    unit unit_type NOT NULL,
+      INT REFERENCES product_categories(category_id) ON DELETE SET NULL,
+    is_available BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Subscriptions Table
+CREATE TABLE subscriptions (
+    subscription_id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
+    address_id INT NOT NULL REFERENCES delivery_addresses(address_id) ON DELETE RESTRICT,
+    frequency delivery_frequency NOT NULL,
+    status subscription_status NOT NULL DEFAULT 'active',
+    start_date DATE NOT NULL,
+    end_date DATE,
+    next_delivery_date DATE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Subscription Items Table
+CREATE TABLE subscription_items (
+    subscription_item_id SERIAL PRIMARY KEY,
+    subscription_id INT NOT NULL REFERENCES subscriptions(subscription_id) ON DELETE CASCADE,
+    product_id INT NOT NULL REFERENCES products(product_id) ON DELETE CASCADE,
+    quantity NUMERIC(10, 2) NOT NULL CHECK (quantity > 0),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE (subscription_id, product_id)
+);
+
+-- Orders Table
+CREATE TABLE orders (
+    order_id SERIAL PRIMARY KEY,
+    subscription_id INT NOT NULL REFERENCES subscriptions(subscription_id) ON DELETE CASCADE,
+    order_date DATE NOT NULL DEFAULT CURRENT_DATE,
+    total_amount NUMERIC(10, 2) NOT NULL CHECK (total_amount >= 0),
+    status order_status NOT NULL DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Order Items Table
+CREATE TABLE order_items (
+    order_item_id SERIAL PRIMARY KEY,
+    order_id INT NOT NULL REFERENCES orders(order_id) ON DELETE CASCADE,
+    product_id INT NOT NULL REFERENCES products(product_id) ON DELETE RESTRICT,
+    quantity NUMERIC(10, 2) NOT NULL CHECK (quantity > 0),
+    price_at_order NUMERIC(10, 2) NOT NULL CHECK (price_at_order >= 0),
+    total_price NUMERIC(10, 2) GENERATED ALWAYS AS (quantity * price_at_order) STORED,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Deliveries Table
+CREATE TABLE deliveries (
+    delivery_id SERIAL PRIMARY KEY,
+    order_id INT NOT NULL REFERENCES orders(order_id) ON DELETE CASCADE,
+    delivery_date DATE NOT NULL,
+    status delivery_status NOT NULL DEFAULT 'pending',
+    tracking_info TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Payments Table
+CREATE TABLE payments (
+    payment_id SERIAL PRIMARY KEY,
+    order_id INT NOT NULL REFERENCES orders(order_id) ON DELETE CASCADE,
+    amount NUMERIC(10, 2) NOT NULL CHECK (amount >= 0),
+    payment_method payment_method NOT NULL,
+    status payment_status NOT NULL DEFAULT 'pending',
+    transaction_id VARCHAR(100),
+    payment_date TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-----------------------------
+-- Create Indexes
+-----------------------------
+CREATE INDEX idx_subscriptions_user_id ON subscriptions(user_id);
+CREATE INDEX idx_subscription_items_subscription_id ON subscription_items(subscription_id);
+CREATE INDEX idx_orders_subscription_id ON orders(subscription_id);
+CREATE INDEX idx_deliveries_order_id ON deliveries(order_id);
+CREATE INDEX idx_payments_order_id ON payments(order_id);
+CREATE INDEX idx_products_category_id ON products(category_id);

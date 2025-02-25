@@ -16,4 +16,6 @@ urlpatterns = [
     path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/v1/schema/', SpectacularAPIView.as_view(), name='api-schema'),
     path('api/v1/schema/docs/', SpectacularSwaggerView.as_view(url_name="api-schema")),
+
+    path('api/v1/address/', include('delivery_address.urls')),
 ]
