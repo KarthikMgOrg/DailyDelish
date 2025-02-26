@@ -1,0 +1,54 @@
+user_id,street_address,city,state,postal_code,country,is_default
+2,123 Elm Street,New York,NY,10001,USA,True
+3,456 Oak Avenue,Los Angeles,CA,90012,USA,False
+4,789 Maple Drive,Chicago,IL,60601,USA,False
+55,101 Pine Road,Houston,TX,77002,USA,True
+56,202 Birch Lane,Phoenix,AZ,85001,USA,False
+57,303 Cedar Street,San Antonio,TX,78205,USA,False
+58,404 Spruce Avenue,Philadelphia,PA,19103,USA,True
+59,505 Walnut Drive,San Diego,CA,92101,USA,False
+60,606 Ash Boulevard,Dallas,TX,75201,USA,False
+61,707 Chestnut Lane,San Jose,CA,95112,USA,True
+62,808 Redwood Road,Austin,TX,73301,USA,False
+63,909 Magnolia Street,Jacksonville,FL,32202,USA,False
+64,111 Cypress Avenue,San Francisco,CA,94102,USA,True
+65,222 Sycamore Drive,Columbus,OH,43215,USA,False
+66,333 Fir Boulevard,Indianapolis,IN,46204,USA,False
+67,444 Palm Road,Charlotte,NC,28202,USA,True
+68,555 Poplar Street,Seattle,WA,98101,USA,False
+69,666 Juniper Lane,Denver,CO,80202,USA,False
+70,777 Acacia Drive,Boston,MA,2108,USA,True
+71,888 Willow Avenue,Detroit,MI,48226,USA,False
+72,999 Hickory Road,Nashville,TN,37219,USA,False
+73,1000 Dogwood Street,Portland,OR,97205,USA,True
+74,1101 Sequoia Drive,Las Vegas,NV,89101,USA,False
+75,1202 Laurel Lane,Memphis,TN,38103,USA,False
+76,1303 Cedar Road,Oklahoma City,OK,73102,USA,True
+77,1404 Elm Street,Louisville,KY,40202,USA,False
+78,1505 Oak Avenue,Baltimore,MD,21202,USA,False
+79,1606 Maple Drive,Milwaukee,WI,53202,USA,True
+80,1707 Pine Road,Albuquerque,NM,87102,USA,False
+81,1808 Birch Lane,Tucson,AZ,85701,USA,False
+82,1909 Cedar Street,Fresno,CA,93721,USA,True
+83,2001 Spruce Avenue,Sacramento,CA,95814,USA,False
+84,2102 Walnut Drive,Kansas City,MO,64106,USA,False
+85,2203 Ash Boulevard,Atlanta,GA,30303,USA,True
+86,2304 Chestnut Lane,Miami,FL,33128,USA,False
+87,2405 Redwood Road,Colorado Springs,CO,80903,USA,False
+88,2506 Magnolia Street,Raleigh,NC,27601,USA,True
+89,2607 Cypress Avenue,Omaha,NE,68102,USA,False
+90,2708 Sycamore Drive,Long Beach,CA,90802,USA,False
+91,2809 Fir Boulevard,Virginia Beach,VA,23451,USA,True
+92,2901 Palm Road,Oakland,CA,94612,USA,False
+93,3002 Poplar Street,Minneapolis,MN,55401,USA,False
+94,3103 Juniper Lane,Tulsa,OK,74103,USA,True
+95,3204 Acacia Drive,Arlington,TX,76010,USA,False
+96,3305 Willow Avenue,New Orleans,LA,70112,USA,False
+97,3406 Hickory Road,Wichita,KS,67202,USA,True
+98,3507 Dogwood Street,Bakersfield,CA,93301,USA,False
+99,3608 Sequoia Drive,Tampa,FL,33602,USA,False
+100,3709 Laurel Lane,Aurora,CO,80010,USA,True
+101,3801 Cedar Road,Honolulu,HI,96813,USA,False
+102,3902 Elm Street,Anaheim,CA,92805,USA,False
+103,4003 Oak Avenue,Saint Paul,MN,55101,USA,True
+104,4104 Maple Drive,Anchorage,AK,99501,USA,False

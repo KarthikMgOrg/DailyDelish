@@ -7,6 +7,8 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 from custom_auth.views import CustomTokenObtainPairView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -18,4 +20,6 @@ urlpatterns = [
     path('api/v1/schema/docs/', SpectacularSwaggerView.as_view(url_name="api-schema")),
 
     path('api/v1/address/', include('delivery_address.urls')),
+    path('api/v1/products/', include('products.urls')),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

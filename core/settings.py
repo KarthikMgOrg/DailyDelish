@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     #user defined models
     'custom_auth',
     'delivery_address',
+    'product_category',
+    'products',
+    'subscriptions',
 ]
 
 MIDDLEWARE = [
@@ -91,6 +94,10 @@ AUTHENTICATION_BACKENDS = [
     # `allauth` specific authentication methods, such as login by email
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 
 
 REST_FRAMEWORK = {
