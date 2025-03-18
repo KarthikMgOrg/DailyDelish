@@ -16,6 +16,8 @@ django.setup()
 
 # User = get_user_model()
 
+# python3 manage.py feed_product_category - -file =./product_category/management/data.csv
+
 
 class Command(BaseCommand):
     help = "Feeds data into MyModel from a CSV file"
