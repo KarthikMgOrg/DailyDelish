@@ -17,6 +17,7 @@ django.setup()
 
 # User = get_user_model()
 
+# python3 manage.py feed_product_category - -file = ./products/management/data.csv
 
 class Command(BaseCommand):
     help = "Feeds data into MyModel from a CSV file"
@@ -50,7 +51,8 @@ class Command(BaseCommand):
                     image = row['is_available']
                     thumbnail = row['thumbnail']
 
-                    category = ProductCategory.objects.get(id=category_id)
+                    category = ProductCategory.objects.get(
+                        category_id=category_id)
 
                     # Create user and hash the password properly
                     product = Product(
@@ -71,7 +73,7 @@ class Command(BaseCommand):
                         batch = []
 
                 if batch:  # Insert remaining records
-                    ProductCategory.objects.bulk_create(batch)
+                    Product.objects.bulk_create(batch)
 
             self.stdout.write(self.style.SUCCESS(
                 "Data successfully imported!"))

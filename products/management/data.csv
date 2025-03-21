@@ -1,101 +1,182 @@
-name,description,mrp,available_price,unit,category_id,is_available,thumbnail,image,,,,
-Pepper,High-quality pepper sourced from the best farms.,44.64,39.5,KILOGRAM,1,FALSE,https://picsum.photos/seed/1/200/200,https://picsum.photos/seed/1/200/200,,,,
-Banana,High-quality banana sourced from the best farms.,37.21,28.45,UNIT,15,TRUE,https://picsum.photos/seed/2/200/200,https://picsum.photos/seed/2/200/200,,,,
-Potato,High-quality potato sourced from the best farms.,66.01,53.57,KILOGRAM,14,FALSE,https://picsum.photos/seed/3/200/200,https://picsum.photos/seed/3/200/200,,,,
-Beef,High-quality beef sourced from the best farms.,26.1,21.15,KILOGRAM,8,FALSE,https://picsum.photos/seed/4/200/200,https://picsum.photos/seed/4/200/200,,,,
-Fish,High-quality fish sourced from the best farms.,30.69,28.15,KILOGRAM,20,FALSE,https://picsum.photos/seed/5/200/200,https://picsum.photos/seed/5/200/200,,,,
-Olive Oil,High-quality olive oil sourced from the best farms.,74.1,65.7,UNIT,13,TRUE,https://picsum.photos/seed/6/200/200,https://picsum.photos/seed/6/200/200,,,,
-Potato,High-quality potato sourced from the best farms.,81.13,63.74,KILOGRAM,2,TRUE,https://picsum.photos/seed/7/200/200,https://picsum.photos/seed/7/200/200,,,,
-Banana,High-quality banana sourced from the best farms.,7.08,5.45,KILOGRAM,3,TRUE,https://picsum.photos/seed/8/200/200,https://picsum.photos/seed/8/200/200,,,,
-Sugar,High-quality sugar sourced from the best farms.,94.42,73.13,UNIT,20,FALSE,https://picsum.photos/seed/9/200/200,https://picsum.photos/seed/9/200/200,,,,
-Cereal,High-quality cereal sourced from the best farms.,54.78,45.07,KILOGRAM,5,TRUE,https://picsum.photos/seed/10/200/200,https://picsum.photos/seed/10/200/200,,,,
-Salt,High-quality salt sourced from the best farms.,5.24,4.27,KILOGRAM,4,FALSE,https://picsum.photos/seed/11/200/200,https://picsum.photos/seed/11/200/200,,,,
-Butter,High-quality butter sourced from the best farms.,21.22,15.96,UNIT,17,TRUE,https://picsum.photos/seed/12/200/200,https://picsum.photos/seed/12/200/200,,,,
-Banana,High-quality banana sourced from the best farms.,99.3,86.46,UNIT,19,TRUE,https://picsum.photos/seed/13/200/200,https://picsum.photos/seed/13/200/200,,,,
-Rice,High-quality rice sourced from the best farms.,73.11,55.78,KILOGRAM,11,TRUE,https://picsum.photos/seed/14/200/200,https://picsum.photos/seed/14/200/200,,,,
-Potato,High-quality potato sourced from the best farms.,61.4,46.4,UNIT,4,TRUE,https://picsum.photos/seed/15/200/200,https://picsum.photos/seed/15/200/200,,,,
-Potato,High-quality potato sourced from the best farms.,56.43,50.07,UNIT,20,FALSE,https://picsum.photos/seed/16/200/200,https://picsum.photos/seed/16/200/200,,,,
-Cheese,High-quality cheese sourced from the best farms.,46.93,39.67,KILOGRAM,18,FALSE,https://picsum.photos/seed/17/200/200,https://picsum.photos/seed/17/200/200,,,,
-Salt,High-quality salt sourced from the best farms.,52.35,38.43,KILOGRAM,5,TRUE,https://picsum.photos/seed/18/200/200,https://picsum.photos/seed/18/200/200,,,,
-Apple,High-quality apple sourced from the best farms.,68.56,59.08,KILOGRAM,20,FALSE,https://picsum.photos/seed/19/200/200,https://picsum.photos/seed/19/200/200,,,,
-Olive Oil,High-quality olive oil sourced from the best farms.,11.21,7.93,KILOGRAM,9,FALSE,https://picsum.photos/seed/20/200/200,https://picsum.photos/seed/20/200/200,,,,
-Cereal,High-quality cereal sourced from the best farms.,45.39,42.5,KILOGRAM,13,TRUE,https://picsum.photos/seed/21/200/200,https://picsum.photos/seed/21/200/200,,,,
-Chicken,High-quality chicken sourced from the best farms.,45.02,32.97,KILOGRAM,10,FALSE,https://picsum.photos/seed/22/200/200,https://picsum.photos/seed/22/200/200,,,,
-Olive Oil,High-quality olive oil sourced from the best farms.,39.67,37.46,KILOGRAM,19,FALSE,https://picsum.photos/seed/23/200/200,https://picsum.photos/seed/23/200/200,,,,
-Pepper,High-quality pepper sourced from the best farms.,54.27,47.37,KILOGRAM,8,FALSE,https://picsum.photos/seed/24/200/200,https://picsum.photos/seed/24/200/200,,,,
-Carrot,High-quality carrot sourced from the best farms.,70.99,66.61,UNIT,8,FALSE,https://picsum.photos/seed/25/200/200,https://picsum.photos/seed/25/200/200,,,,
-Olive Oil,High-quality olive oil sourced from the best farms.,58.6,53.21,KILOGRAM,18,TRUE,https://picsum.photos/seed/26/200/200,https://picsum.photos/seed/26/200/200,,,,
-Pepper,High-quality pepper sourced from the best farms.,5.38,4.85,UNIT,17,FALSE,https://picsum.photos/seed/27/200/200,https://picsum.photos/seed/27/200/200,,,,
-Sugar,High-quality sugar sourced from the best farms.,82.46,58.12,UNIT,5,TRUE,https://picsum.photos/seed/28/200/200,https://picsum.photos/seed/28/200/200,,,,
-Rice,High-quality rice sourced from the best farms.,58.47,48.67,KILOGRAM,12,FALSE,https://picsum.photos/seed/29/200/200,https://picsum.photos/seed/29/200/200,,,,
-Orange,High-quality orange sourced from the best farms.,10.38,8.7,UNIT,7,TRUE,https://picsum.photos/seed/30/200/200,https://picsum.photos/seed/30/200/200,,,,
-Cheese,High-quality cheese sourced from the best farms.,10.17,7.84,UNIT,17,FALSE,https://picsum.photos/seed/31/200/200,https://picsum.photos/seed/31/200/200,,,,
-Pasta,High-quality pasta sourced from the best farms.,61.28,42.94,KILOGRAM,20,FALSE,https://picsum.photos/seed/32/200/200,https://picsum.photos/seed/32/200/200,,,,
-Orange,High-quality orange sourced from the best farms.,46.5,33.03,KILOGRAM,19,TRUE,https://picsum.photos/seed/33/200/200,https://picsum.photos/seed/33/200/200,,,,
-Rice,High-quality rice sourced from the best farms.,54.05,42.19,UNIT,10,TRUE,https://picsum.photos/seed/34/200/200,https://picsum.photos/seed/34/200/200,,,,
-Pasta,High-quality pasta sourced from the best farms.,78.12,61.6,KILOGRAM,18,FALSE,https://picsum.photos/seed/35/200/200,https://picsum.photos/seed/35/200/200,,,,
-Carrot,High-quality carrot sourced from the best farms.,33.22,25.25,UNIT,11,TRUE,https://picsum.photos/seed/36/200/200,https://picsum.photos/seed/36/200/200,,,,
-Butter,High-quality butter sourced from the best farms.,77.12,67.52,KILOGRAM,14,FALSE,https://picsum.photos/seed/37/200/200,https://picsum.photos/seed/37/200/200,,,,
-Pepper,High-quality pepper sourced from the best farms.,7.03,5.9,UNIT,17,TRUE,https://picsum.photos/seed/38/200/200,https://picsum.photos/seed/38/200/200,,,,
-Cereal,High-quality cereal sourced from the best farms.,67.57,58.27,KILOGRAM,9,FALSE,https://picsum.photos/seed/39/200/200,https://picsum.photos/seed/39/200/200,,,,
-Milk,High-quality milk sourced from the best farms.,34.07,30.44,KILOGRAM,17,TRUE,https://picsum.photos/seed/40/200/200,https://picsum.photos/seed/40/200/200,,,,
-Bread,High-quality bread sourced from the best farms.,58,42.97,UNIT,7,TRUE,https://picsum.photos/seed/41/200/200,https://picsum.photos/seed/41/200/200,,,,
-Banana,High-quality banana sourced from the best farms.,49.19,34.57,UNIT,17,TRUE,https://picsum.photos/seed/42/200/200,https://picsum.photos/seed/42/200/200,,,,
-Potato,High-quality potato sourced from the best farms.,22.42,20.95,UNIT,19,TRUE,https://picsum.photos/seed/43/200/200,https://picsum.photos/seed/43/200/200,,,,
-Salt,High-quality salt sourced from the best farms.,37.12,31.95,UNIT,4,TRUE,https://picsum.photos/seed/44/200/200,https://picsum.photos/seed/44/200/200,,,,
-Apple,High-quality apple sourced from the best farms.,69.55,63.71,UNIT,9,TRUE,https://picsum.photos/seed/45/200/200,https://picsum.photos/seed/45/200/200,,,,
-Rice,High-quality rice sourced from the best farms.,20.39,18.33,UNIT,20,TRUE,https://picsum.photos/seed/46/200/200,https://picsum.photos/seed/46/200/200,,,,
-Banana,High-quality banana sourced from the best farms.,64.47,54.84,KILOGRAM,16,TRUE,https://picsum.photos/seed/47/200/200,https://picsum.photos/seed/47/200/200,,,,
-Apple,High-quality apple sourced from the best farms.,99.34,94.02,UNIT,19,FALSE,https://picsum.photos/seed/48/200/200,https://picsum.photos/seed/48/200/200,,,,
-Salt,High-quality salt sourced from the best farms.,49.18,41.35,KILOGRAM,11,TRUE,https://picsum.photos/seed/49/200/200,https://picsum.photos/seed/49/200/200,,,,
-Sugar,High-quality sugar sourced from the best farms.,69.08,54.89,UNIT,1,FALSE,https://picsum.photos/seed/50/200/200,https://picsum.photos/seed/50/200/200,,,,
-Milk,High-quality milk sourced from the best farms.,48.29,42.23,UNIT,1,FALSE,https://picsum.photos/seed/51/200/200,https://picsum.photos/seed/51/200/200,,,,
-Apple,High-quality apple sourced from the best farms.,10.12,8.52,UNIT,15,TRUE,https://picsum.photos/seed/52/200/200,https://picsum.photos/seed/52/200/200,,,,
-Sugar,High-quality sugar sourced from the best farms.,75.93,56.04,UNIT,9,TRUE,https://picsum.photos/seed/53/200/200,https://picsum.photos/seed/53/200/200,,,,
-Pepper,High-quality pepper sourced from the best farms.,68.05,48.3,UNIT,16,TRUE,https://picsum.photos/seed/54/200/200,https://picsum.photos/seed/54/200/200,,,,
-Carrot,High-quality carrot sourced from the best farms.,46.38,38.73,KILOGRAM,1,FALSE,https://picsum.photos/seed/55/200/200,https://picsum.photos/seed/55/200/200,,,,
-Salt,High-quality salt sourced from the best farms.,86.45,74.02,UNIT,10,FALSE,https://picsum.photos/seed/56/200/200,https://picsum.photos/seed/56/200/200,,,,
-Apple,High-quality apple sourced from the best farms.,69.91,49.61,KILOGRAM,13,FALSE,https://picsum.photos/seed/57/200/200,https://picsum.photos/seed/57/200/200,,,,
-Cereal,High-quality cereal sourced from the best farms.,6.21,5.3,UNIT,11,FALSE,https://picsum.photos/seed/58/200/200,https://picsum.photos/seed/58/200/200,,,,
-Carrot,High-quality carrot sourced from the best farms.,85.23,75.47,KILOGRAM,8,FALSE,https://picsum.photos/seed/59/200/200,https://picsum.photos/seed/59/200/200,,,,
-Pepper,High-quality pepper sourced from the best farms.,60.2,49.49,KILOGRAM,14,FALSE,https://picsum.photos/seed/60/200/200,https://picsum.photos/seed/60/200/200,,,,
-Rice,High-quality rice sourced from the best farms.,73.21,53.13,KILOGRAM,15,FALSE,https://picsum.photos/seed/61/200/200,https://picsum.photos/seed/61/200/200,,,,
-Orange,High-quality orange sourced from the best farms.,15.45,11.56,UNIT,17,TRUE,https://picsum.photos/seed/62/200/200,https://picsum.photos/seed/62/200/200,,,,
-Potato,High-quality potato sourced from the best farms.,26.52,24.56,UNIT,18,FALSE,https://picsum.photos/seed/63/200/200,https://picsum.photos/seed/63/200/200,,,,
-Rice,High-quality rice sourced from the best farms.,71.22,62.5,KILOGRAM,15,FALSE,https://picsum.photos/seed/64/200/200,https://picsum.photos/seed/64/200/200,,,,
-Rice,High-quality rice sourced from the best farms.,54.5,49.09,UNIT,19,TRUE,https://picsum.photos/seed/65/200/200,https://picsum.photos/seed/65/200/200,,,,
-Chicken,High-quality chicken sourced from the best farms.,10.46,8.13,UNIT,1,TRUE,https://picsum.photos/seed/66/200/200,https://picsum.photos/seed/66/200/200,,,,
-Sugar,High-quality sugar sourced from the best farms.,81.05,70.33,KILOGRAM,2,TRUE,https://picsum.photos/seed/67/200/200,https://picsum.photos/seed/67/200/200,,,,
-Rice,High-quality rice sourced from the best farms.,11.66,9.01,UNIT,19,TRUE,https://picsum.photos/seed/68/200/200,https://picsum.photos/seed/68/200/200,,,,
-Rice,High-quality rice sourced from the best farms.,96.38,71.48,KILOGRAM,16,TRUE,https://picsum.photos/seed/69/200/200,https://picsum.photos/seed/69/200/200,,,,
-Pepper,High-quality pepper sourced from the best farms.,70.48,66.19,KILOGRAM,14,TRUE,https://picsum.photos/seed/70/200/200,https://picsum.photos/seed/70/200/200,,,,
-Cheese,High-quality cheese sourced from the best farms.,77.85,55.48,UNIT,17,FALSE,https://picsum.photos/seed/71/200/200,https://picsum.photos/seed/71/200/200,,,,
-Sugar,High-quality sugar sourced from the best farms.,28.56,21.55,KILOGRAM,15,TRUE,https://picsum.photos/seed/72/200/200,https://picsum.photos/seed/72/200/200,,,,
-Rice,High-quality rice sourced from the best farms.,22.11,21,KILOGRAM,20,TRUE,https://picsum.photos/seed/73/200/200,https://picsum.photos/seed/73/200/200,,,,
-Pasta,High-quality pasta sourced from the best farms.,25.15,22.95,UNIT,7,TRUE,https://picsum.photos/seed/74/200/200,https://picsum.photos/seed/74/200/200,,,,
-Banana,High-quality banana sourced from the best farms.,41.3,35.82,UNIT,14,TRUE,https://picsum.photos/seed/75/200/200,https://picsum.photos/seed/75/200/200,,,,
-Pasta,High-quality pasta sourced from the best farms.,50.23,39.75,KILOGRAM,3,FALSE,https://picsum.photos/seed/76/200/200,https://picsum.photos/seed/76/200/200,,,,
-Cheese,High-quality cheese sourced from the best farms.,91.11,81.87,UNIT,13,TRUE,https://picsum.photos/seed/77/200/200,https://picsum.photos/seed/77/200/200,,,,
-Pepper,High-quality pepper sourced from the best farms.,16.73,13.14,KILOGRAM,1,FALSE,https://picsum.photos/seed/78/200/200,https://picsum.photos/seed/78/200/200,,,,
-Salt,High-quality salt sourced from the best farms.,26.98,19.99,KILOGRAM,14,FALSE,https://picsum.photos/seed/79/200/200,https://picsum.photos/seed/79/200/200,,,,
-Tomato,High-quality tomato sourced from the best farms.,37.9,35.33,KILOGRAM,11,FALSE,https://picsum.photos/seed/80/200/200,https://picsum.photos/seed/80/200/200,,,,
-Carrot,High-quality carrot sourced from the best farms.,55.51,51.01,KILOGRAM,2,TRUE,https://picsum.photos/seed/81/200/200,https://picsum.photos/seed/81/200/200,,,,
-Apple,High-quality apple sourced from the best farms.,24.57,19.06,UNIT,15,FALSE,https://picsum.photos/seed/82/200/200,https://picsum.photos/seed/82/200/200,,,,
-Pasta,High-quality pasta sourced from the best farms.,39.4,33.52,UNIT,18,TRUE,https://picsum.photos/seed/83/200/200,https://picsum.photos/seed/83/200/200,,,,
-Sugar,High-quality sugar sourced from the best farms.,13.79,11.33,KILOGRAM,4,FALSE,https://picsum.photos/seed/84/200/200,https://picsum.photos/seed/84/200/200,,,,
-Sugar,High-quality sugar sourced from the best farms.,67.93,48.72,KILOGRAM,10,FALSE,https://picsum.photos/seed/85/200/200,https://picsum.photos/seed/85/200/200,,,,
-Tomato,High-quality tomato sourced from the best farms.,15.4,13.29,UNIT,18,FALSE,https://picsum.photos/seed/86/200/200,https://picsum.photos/seed/86/200/200,,,,
-Cereal,High-quality cereal sourced from the best farms.,57.25,43.71,UNIT,6,TRUE,https://picsum.photos/seed/87/200/200,https://picsum.photos/seed/87/200/200,,,,
-Salt,High-quality salt sourced from the best farms.,94.83,68.87,KILOGRAM,17,FALSE,https://picsum.photos/seed/88/200/200,https://picsum.photos/seed/88/200/200,,,,
-Banana,High-quality banana sourced from the best farms.,95.28,67.47,UNIT,6,FALSE,https://picsum.photos/seed/89/200/200,https://picsum.photos/seed/89/200/200,,,,
-Beef,High-quality beef sourced from the best farms.,10.11,9.12,UNIT,4,FALSE,https://picsum.photos/seed/90/200/200,https://picsum.photos/seed/90/200/200,,,,
-Carrot,High-quality carrot sourced from the best farms.,54.95,41.7,KILOGRAM,2,TRUE,https://picsum.photos/seed/91/200/200,https://picsum.photos/seed/91/200/200,,,,
-Potato,High-quality potato sourced from the best farms.,5.68,5.36,UNIT,19,FALSE,https://picsum.photos/seed/92/200/200,https://picsum.photos/seed/92/200/200,,,,
-Apple,High-quality apple sourced from the best farms.,89.81,85.21,UNIT,12,FALSE,https://picsum.photos/seed/93/200/200,https://picsum.photos/seed/93/200/200,,,,
-Butter,High-quality butter sourced from the best farms.,91.79,83.81,KILOGRAM,18,FALSE,https://picsum.photos/seed/94/200/200,https://picsum.photos/seed/94/200/200,,,,
-Fish,High-quality fish sourced from the best farms.,71.46,57.29,KILOGRAM,19,TRUE,https://picsum.photos/seed/95/200/200,https://picsum.photos/seed/95/200/200,,,,
-Apple,High-quality apple sourced from the best farms.,18.02,15.04,UNIT,19,FALSE,https://picsum.photos/seed/96/200/200,https://picsum.photos/seed/96/200/200,,,,
-Orange,High-quality orange sourced from the best farms.,63.12,53.27,KILOGRAM,8,FALSE,https://picsum.photos/seed/97/200/200,https://picsum.photos/seed/97/200/200,,,,
-Banana,High-quality banana sourced from the best farms.,60.35,49.15,UNIT,18,TRUE,https://picsum.photos/seed/98/200/200,https://picsum.photos/seed/98/200/200,,,,
-Orange,High-quality orange sourced from the best farms.,90.31,81.94,UNIT,13,FALSE,https://picsum.photos/seed/99/200/200,https://picsum.photos/seed/99/200/200,,,,
-Carrot,High-quality carrot sourced from the best farms.,67.01,56.55,KILOGRAM,13,TRUE,https://picsum.photos/seed/100/200/200,https://picsum.photos/seed/100/200/200,,,,
+product_id,name,description,mrp,available_price,unit,category_id,is_available,image,thumbnail
+1,Rice,High-quality Rice available in best price.,485.8,453.85,KILOGRAM,11,True,products/images/rice.jpg,products/thumbnails/rice_thumb.jpg
+2,Wheat Flour,High-quality Wheat Flour available in best price.,274.64,248.78,KILOGRAM,11,True,products/images/wheat_flour.jpg,products/thumbnails/wheat_flour_thumb.jpg
+3,Cooking Oil,High-quality Cooking Oil available in best price.,53.38,47.76,UNIT,11,True,products/images/cooking_oil.jpg,products/thumbnails/cooking_oil_thumb.jpg
+4,Sugar,High-quality Sugar available in best price.,381.72,355.02,KILOGRAM,11,True,products/images/sugar.jpg,products/thumbnails/sugar_thumb.jpg
+5,Salt,High-quality Salt available in best price.,422.22,400.84,KILOGRAM,11,True,products/images/salt.jpg,products/thumbnails/salt_thumb.jpg
+6,Tea Powder,High-quality Tea Powder available in best price.,298.57,252.85,UNIT,11,True,products/images/tea_powder.jpg,products/thumbnails/tea_powder_thumb.jpg
+7,Coffee,High-quality Coffee available in best price.,174.2,164.62,UNIT,11,True,products/images/coffee.jpg,products/thumbnails/coffee_thumb.jpg
+8,Biscuits,High-quality Biscuits available in best price.,180.27,168.29,UNIT,11,True,products/images/biscuits.jpg,products/thumbnails/biscuits_thumb.jpg
+9,Dry Fruits,High-quality Dry Fruits available in best price.,181.54,153.19,KILOGRAM,11,True,products/images/dry_fruits.jpg,products/thumbnails/dry_fruits_thumb.jpg
+10,Pulses,High-quality Pulses available in best price.,474.73,445.92,KILOGRAM,11,True,products/images/pulses.jpg,products/thumbnails/pulses_thumb.jpg
+11,Spices,High-quality Spices available in best price.,196.57,185.42,KILOGRAM,11,True,products/images/spices.jpg,products/thumbnails/spices_thumb.jpg
+12,Honey,High-quality Honey available in best price.,12.96,10.99,UNIT,11,True,products/images/honey.jpg,products/thumbnails/honey_thumb.jpg
+13,Jam,High-quality Jam available in best price.,390.89,369.39,UNIT,11,True,products/images/jam.jpg,products/thumbnails/jam_thumb.jpg
+14,Cornflakes,High-quality Cornflakes available in best price.,273.3,235.03,UNIT,11,True,products/images/cornflakes.jpg,products/thumbnails/cornflakes_thumb.jpg
+15,Pasta,High-quality Pasta available in best price.,373.11,312.47,UNIT,11,True,products/images/pasta.jpg,products/thumbnails/pasta_thumb.jpg
+16,Noodles,High-quality Noodles available in best price.,31.3,25.87,UNIT,11,True,products/images/noodles.jpg,products/thumbnails/noodles_thumb.jpg
+17,Canned Beans,High-quality Canned Beans available in best price.,16.29,14.97,UNIT,11,True,products/images/canned_beans.jpg,products/thumbnails/canned_beans_thumb.jpg
+18,Pickles,High-quality Pickles available in best price.,356.47,290.82,UNIT,11,True,products/images/pickles.jpg,products/thumbnails/pickles_thumb.jpg
+19,Peanut Butter,High-quality Peanut Butter available in best price.,147.22,135.72,UNIT,11,True,products/images/peanut_butter.jpg,products/thumbnails/peanut_butter_thumb.jpg
+20,Ghee,High-quality Ghee available in best price.,97.28,91.78,UNIT,11,True,products/images/ghee.jpg,products/thumbnails/ghee_thumb.jpg
+21,Butter,High-quality Butter available in best price.,36.1,32.91,UNIT,11,True,products/images/butter.jpg,products/thumbnails/butter_thumb.jpg
+22,Milk Powder,High-quality Milk Powder available in best price.,242.84,197.09,UNIT,11,True,products/images/milk_powder.jpg,products/thumbnails/milk_powder_thumb.jpg
+23,Oats,High-quality Oats available in best price.,221.86,194.13,KILOGRAM,11,True,products/images/oats.jpg,products/thumbnails/oats_thumb.jpg
+24,Soy Sauce,High-quality Soy Sauce available in best price.,108.47,100.78,UNIT,11,True,products/images/soy_sauce.jpg,products/thumbnails/soy_sauce_thumb.jpg
+25,Vinegar,High-quality Vinegar available in best price.,374.4,345.41,UNIT,11,True,products/images/vinegar.jpg,products/thumbnails/vinegar_thumb.jpg
+26,Lentils,High-quality Lentils available in best price.,285.76,257.72,KILOGRAM,11,True,products/images/lentils.jpg,products/thumbnails/lentils_thumb.jpg
+27,Chocolate,High-quality Chocolate available in best price.,336.78,304.09,UNIT,11,True,products/images/chocolate.jpg,products/thumbnails/chocolate_thumb.jpg
+28,Cheese,High-quality Cheese available in best price.,98.95,84.05,UNIT,11,True,products/images/cheese.jpg,products/thumbnails/cheese_thumb.jpg
+29,Yogurt,High-quality Yogurt available in best price.,446.46,398.81,UNIT,11,True,products/images/yogurt.jpg,products/thumbnails/yogurt_thumb.jpg
+30,Frozen Peas,High-quality Frozen Peas available in best price.,328.61,293.09,UNIT,11,True,products/images/frozen_peas.jpg,products/thumbnails/frozen_peas_thumb.jpg
+31,Green Gram,High-quality Green Gram available in best price.,100.43,86.7,KILOGRAM,11,True,products/images/green_gram.jpg,products/thumbnails/green_gram_thumb.jpg
+32,Black Gram,High-quality Black Gram available in best price.,437.65,396.14,KILOGRAM,11,True,products/images/black_gram.jpg,products/thumbnails/black_gram_thumb.jpg
+33,Mustard Seeds,High-quality Mustard Seeds available in best price.,86.11,69.44,KILOGRAM,11,True,products/images/mustard_seeds.jpg,products/thumbnails/mustard_seeds_thumb.jpg
+34,Coriander Powder,High-quality Coriander Powder available in best price.,265.15,234.38,KILOGRAM,11,True,products/images/coriander_powder.jpg,products/thumbnails/coriander_powder_thumb.jpg
+35,Turmeric Powder,High-quality Turmeric Powder available in best price.,20.04,17.94,KILOGRAM,11,True,products/images/turmeric_powder.jpg,products/thumbnails/turmeric_powder_thumb.jpg
+36,Cumin Seeds,High-quality Cumin Seeds available in best price.,250.42,215.48,KILOGRAM,11,True,products/images/cumin_seeds.jpg,products/thumbnails/cumin_seeds_thumb.jpg
+37,Cashews,High-quality Cashews available in best price.,135.91,124.69,KILOGRAM,11,True,products/images/cashews.jpg,products/thumbnails/cashews_thumb.jpg
+38,Almonds,High-quality Almonds available in best price.,96.34,90.39,KILOGRAM,11,True,products/images/almonds.jpg,products/thumbnails/almonds_thumb.jpg
+39,Walnuts,High-quality Walnuts available in best price.,42.32,36.35,KILOGRAM,11,True,products/images/walnuts.jpg,products/thumbnails/walnuts_thumb.jpg
+40,Raisins,High-quality Raisins available in best price.,164.95,145.0,KILOGRAM,11,True,products/images/raisins.jpg,products/thumbnails/raisins_thumb.jpg
+41,Sesame Seeds,High-quality Sesame Seeds available in best price.,436.33,402.07,KILOGRAM,11,True,products/images/sesame_seeds.jpg,products/thumbnails/sesame_seeds_thumb.jpg
+42,Sunflower Oil,High-quality Sunflower Oil available in best price.,16.08,13.4,UNIT,11,True,products/images/sunflower_oil.jpg,products/thumbnails/sunflower_oil_thumb.jpg
+43,Olive Oil,High-quality Olive Oil available in best price.,45.72,37.68,UNIT,11,True,products/images/olive_oil.jpg,products/thumbnails/olive_oil_thumb.jpg
+44,Coconut Oil,High-quality Coconut Oil available in best price.,100.13,83.86,UNIT,11,True,products/images/coconut_oil.jpg,products/thumbnails/coconut_oil_thumb.jpg
+45,Bread,High-quality Bread available in best price.,345.64,286.65,UNIT,11,True,products/images/bread.jpg,products/thumbnails/bread_thumb.jpg
+46,Rusk,High-quality Rusk available in best price.,195.37,180.97,UNIT,11,True,products/images/rusk.jpg,products/thumbnails/rusk_thumb.jpg
+47,Jaggery,High-quality Jaggery available in best price.,279.25,229.49,KILOGRAM,11,True,products/images/jaggery.jpg,products/thumbnails/jaggery_thumb.jpg
+48,Brown Sugar,High-quality Brown Sugar available in best price.,409.75,340.71,KILOGRAM,11,True,products/images/brown_sugar.jpg,products/thumbnails/brown_sugar_thumb.jpg
+49,Corn Flour,High-quality Corn Flour available in best price.,68.42,56.05,KILOGRAM,11,True,products/images/corn_flour.jpg,products/thumbnails/corn_flour_thumb.jpg
+50,Gram Flour,High-quality Gram Flour available in best price.,367.47,306.11,KILOGRAM,11,True,products/images/gram_flour.jpg,products/thumbnails/gram_flour_thumb.jpg
+51,Semolina,High-quality Semolina available in best price.,128.76,112.44,KILOGRAM,11,True,products/images/semolina.jpg,products/thumbnails/semolina_thumb.jpg
+52,Tamarind,High-quality Tamarind available in best price.,454.07,408.57,UNIT,11,True,products/images/tamarind.jpg,products/thumbnails/tamarind_thumb.jpg
+53,Cocoa Powder,High-quality Cocoa Powder available in best price.,223.46,191.82,KILOGRAM,11,True,products/images/cocoa_powder.jpg,products/thumbnails/cocoa_powder_thumb.jpg
+54,Milk,High-quality Milk available in best price.,406.71,369.75,UNIT,11,True,products/images/milk.jpg,products/thumbnails/milk_thumb.jpg
+55,Green Tea,High-quality Green Tea available in best price.,146.46,132.79,UNIT,11,True,products/images/green_tea.jpg,products/thumbnails/green_tea_thumb.jpg
+56,Instant Coffee,High-quality Instant Coffee available in best price.,361.39,305.31,UNIT,11,True,products/images/instant_coffee.jpg,products/thumbnails/instant_coffee_thumb.jpg
+57,Protein Bars,High-quality Protein Bars available in best price.,443.79,405.94,UNIT,11,True,products/images/protein_bars.jpg,products/thumbnails/protein_bars_thumb.jpg
+58,Energy Drinks,High-quality Energy Drinks available in best price.,320.71,260.9,UNIT,11,True,products/images/energy_drinks.jpg,products/thumbnails/energy_drinks_thumb.jpg
+59,Dried Berries,High-quality Dried Berries available in best price.,177.26,147.5,UNIT,11,True,products/images/dried_berries.jpg,products/thumbnails/dried_berries_thumb.jpg
+60,Black Salt,High-quality Black Salt available in best price.,132.5,114.57,KILOGRAM,11,True,products/images/black_salt.jpg,products/thumbnails/black_salt_thumb.jpg
+61,Rock Salt,High-quality Rock Salt available in best price.,402.35,366.94,KILOGRAM,11,True,products/images/rock_salt.jpg,products/thumbnails/rock_salt_thumb.jpg
+62,Masoor Dal,High-quality Masoor Dal available in best price.,261.15,247.75,KILOGRAM,11,True,products/images/masoor_dal.jpg,products/thumbnails/masoor_dal_thumb.jpg
+63,Moong Dal,High-quality Moong Dal available in best price.,167.8,154.69,KILOGRAM,11,True,products/images/moong_dal.jpg,products/thumbnails/moong_dal_thumb.jpg
+64,Chana Dal,High-quality Chana Dal available in best price.,234.89,193.39,KILOGRAM,11,True,products/images/chana_dal.jpg,products/thumbnails/chana_dal_thumb.jpg
+65,Urad Dal,High-quality Urad Dal available in best price.,296.53,256.6,KILOGRAM,11,True,products/images/urad_dal.jpg,products/thumbnails/urad_dal_thumb.jpg
+66,Horse Gram,High-quality Horse Gram available in best price.,19.3,16.46,KILOGRAM,11,True,products/images/horse_gram.jpg,products/thumbnails/horse_gram_thumb.jpg
+67,Barley,High-quality Barley available in best price.,453.06,366.03,KILOGRAM,11,True,products/images/barley.jpg,products/thumbnails/barley_thumb.jpg
+68,Quinoa,High-quality Quinoa available in best price.,474.32,423.23,KILOGRAM,11,True,products/images/quinoa.jpg,products/thumbnails/quinoa_thumb.jpg
+69,Fox Nuts,High-quality Fox Nuts available in best price.,462.64,410.31,UNIT,11,True,products/images/fox_nuts.jpg,products/thumbnails/fox_nuts_thumb.jpg
+70,Popcorn Kernels,High-quality Popcorn Kernels available in best price.,117.24,108.77,KILOGRAM,11,True,products/images/popcorn_kernels.jpg,products/thumbnails/popcorn_kernels_thumb.jpg
+71,Ice Cream,High-quality Ice Cream available in best price.,458.46,373.43,UNIT,11,True,products/images/ice_cream.jpg,products/thumbnails/ice_cream_thumb.jpg
+72,Condensed Milk,High-quality Condensed Milk available in best price.,108.77,93.08,UNIT,11,True,products/images/condensed_milk.jpg,products/thumbnails/condensed_milk_thumb.jpg
+73,Evaporated Milk,High-quality Evaporated Milk available in best price.,159.63,147.33,UNIT,11,True,products/images/evaporated_milk.jpg,products/thumbnails/evaporated_milk_thumb.jpg
+74,Vanilla Essence,High-quality Vanilla Essence available in best price.,388.04,322.12,UNIT,11,True,products/images/vanilla_essence.jpg,products/thumbnails/vanilla_essence_thumb.jpg
+75,Baking Powder,High-quality Baking Powder available in best price.,31.34,25.5,UNIT,11,True,products/images/baking_powder.jpg,products/thumbnails/baking_powder_thumb.jpg
+76,Baking Soda,High-quality Baking Soda available in best price.,39.21,36.46,UNIT,11,True,products/images/baking_soda.jpg,products/thumbnails/baking_soda_thumb.jpg
+77,Gelatin,High-quality Gelatin available in best price.,383.64,322.1,UNIT,11,True,products/images/gelatin.jpg,products/thumbnails/gelatin_thumb.jpg
+78,Agar Agar,High-quality Agar Agar available in best price.,353.07,288.38,UNIT,11,True,products/images/agar_agar.jpg,products/thumbnails/agar_agar_thumb.jpg
+79,Tomato Ketchup,High-quality Tomato Ketchup available in best price.,28.2,24.55,UNIT,11,True,products/images/tomato_ketchup.jpg,products/thumbnails/tomato_ketchup_thumb.jpg
+80,Soy Milk,High-quality Soy Milk available in best price.,48.5,45.82,UNIT,11,True,products/images/soy_milk.jpg,products/thumbnails/soy_milk_thumb.jpg
+81,Almond Milk,High-quality Almond Milk available in best price.,169.05,156.26,UNIT,11,True,products/images/almond_milk.jpg,products/thumbnails/almond_milk_thumb.jpg
+82,Coconut Milk,High-quality Coconut Milk available in best price.,16.27,14.97,UNIT,11,True,products/images/coconut_milk.jpg,products/thumbnails/coconut_milk_thumb.jpg
+83,Mushrooms,High-quality Mushrooms available in best price.,363.05,312.92,UNIT,11,True,products/images/mushrooms.jpg,products/thumbnails/mushrooms_thumb.jpg
+84,Green Chilies,High-quality Green Chilies available in best price.,322.69,304.48,UNIT,11,True,products/images/green_chilies.jpg,products/thumbnails/green_chilies_thumb.jpg
+85,Ginger Paste,High-quality Ginger Paste available in best price.,118.83,98.7,UNIT,11,True,products/images/ginger_paste.jpg,products/thumbnails/ginger_paste_thumb.jpg
+86,Garlic Paste,High-quality Garlic Paste available in best price.,24.93,21.09,UNIT,11,True,products/images/garlic_paste.jpg,products/thumbnails/garlic_paste_thumb.jpg
+87,Curry Leaves,High-quality Curry Leaves available in best price.,346.14,307.19,UNIT,11,True,products/images/curry_leaves.jpg,products/thumbnails/curry_leaves_thumb.jpg
+88,Basil Leaves,High-quality Basil Leaves available in best price.,258.43,240.82,UNIT,11,True,products/images/basil_leaves.jpg,products/thumbnails/basil_leaves_thumb.jpg
+89,Bay Leaves,High-quality Bay Leaves available in best price.,90.53,78.46,UNIT,11,True,products/images/bay_leaves.jpg,products/thumbnails/bay_leaves_thumb.jpg
+90,Cinnamon,High-quality Cinnamon available in best price.,499.06,446.78,UNIT,11,True,products/images/cinnamon.jpg,products/thumbnails/cinnamon_thumb.jpg
+91,Cardamom,High-quality Cardamom available in best price.,469.97,430.68,UNIT,11,True,products/images/cardamom.jpg,products/thumbnails/cardamom_thumb.jpg
+92,Cloves,High-quality Cloves available in best price.,11.6,10.73,UNIT,11,True,products/images/cloves.jpg,products/thumbnails/cloves_thumb.jpg
+93,Nutmeg,High-quality Nutmeg available in best price.,395.71,362.79,UNIT,11,True,products/images/nutmeg.jpg,products/thumbnails/nutmeg_thumb.jpg
+94,Mace,High-quality Mace available in best price.,372.86,333.62,UNIT,11,True,products/images/mace.jpg,products/thumbnails/mace_thumb.jpg
+95,Star Anise,High-quality Star Anise available in best price.,158.91,130.27,UNIT,11,True,products/images/star_anise.jpg,products/thumbnails/star_anise_thumb.jpg
+96,Fenugreek Seeds,High-quality Fenugreek Seeds available in best price.,162.69,153.83,KILOGRAM,11,True,products/images/fenugreek_seeds.jpg,products/thumbnails/fenugreek_seeds_thumb.jpg
+97,Fennel Seeds,High-quality Fennel Seeds available in best price.,127.54,112.22,KILOGRAM,11,True,products/images/fennel_seeds.jpg,products/thumbnails/fennel_seeds_thumb.jpg
+98,Black Pepper,High-quality Black Pepper available in best price.,155.45,137.01,UNIT,11,True,products/images/black_pepper.jpg,products/thumbnails/black_pepper_thumb.jpg
+99,White Pepper,High-quality White Pepper available in best price.,203.58,165.73,UNIT,11,True,products/images/white_pepper.jpg,products/thumbnails/white_pepper_thumb.jpg
+100,Paprika,High-quality Paprika available in best price.,234.89,201.74,UNIT,11,True,products/images/paprika.jpg,products/thumbnails/paprika_thumb.jpg
+101,Chili Powder,High-quality Chili Powder available in best price.,153.68,143.75,UNIT,11,True,products/images/chili_powder.jpg,products/thumbnails/chili_powder_thumb.jpg
+102,Apple,High-quality Apple available in best price.,78.78,66.43,UNIT,11,True,products/images/apple.jpg,products/thumbnails/apple_thumb.jpg
+103,Apple,High-quality Apple available in best price.,157.56,132.86,KILOGRAM,11,True,products/images/apple.jpg,products/thumbnails/apple_thumb.jpg
+104,Banana,High-quality Banana available in best price.,210.02,177.39,UNIT,11,True,products/images/banana.jpg,products/thumbnails/banana_thumb.jpg
+105,Banana,High-quality Banana available in best price.,420.04,354.78,KILOGRAM,11,True,products/images/banana.jpg,products/thumbnails/banana_thumb.jpg
+106,Orange,High-quality Orange available in best price.,129.38,117.63,UNIT,11,True,products/images/orange.jpg,products/thumbnails/orange_thumb.jpg
+107,Orange,High-quality Orange available in best price.,258.76,235.26,KILOGRAM,11,True,products/images/orange.jpg,products/thumbnails/orange_thumb.jpg
+108,Mango,High-quality Mango available in best price.,82.11,75.97,UNIT,11,True,products/images/mango.jpg,products/thumbnails/mango_thumb.jpg
+109,Mango,High-quality Mango available in best price.,164.22,151.94,KILOGRAM,11,True,products/images/mango.jpg,products/thumbnails/mango_thumb.jpg
+110,Grapes,High-quality Grapes available in best price.,338.59,294.44,UNIT,11,True,products/images/grapes.jpg,products/thumbnails/grapes_thumb.jpg
+111,Grapes,High-quality Grapes available in best price.,677.18,588.88,KILOGRAM,11,True,products/images/grapes.jpg,products/thumbnails/grapes_thumb.jpg
+112,Pineapple,High-quality Pineapple available in best price.,104.71,84.16,UNIT,11,True,products/images/pineapple.jpg,products/thumbnails/pineapple_thumb.jpg
+113,Pineapple,High-quality Pineapple available in best price.,209.42,168.32,KILOGRAM,11,True,products/images/pineapple.jpg,products/thumbnails/pineapple_thumb.jpg
+114,Watermelon,High-quality Watermelon available in best price.,493.44,435.14,UNIT,11,True,products/images/watermelon.jpg,products/thumbnails/watermelon_thumb.jpg
+115,Watermelon,High-quality Watermelon available in best price.,986.88,870.28,KILOGRAM,11,True,products/images/watermelon.jpg,products/thumbnails/watermelon_thumb.jpg
+116,Papaya,High-quality Papaya available in best price.,75.15,63.08,UNIT,11,True,products/images/papaya.jpg,products/thumbnails/papaya_thumb.jpg
+117,Papaya,High-quality Papaya available in best price.,150.3,126.16,KILOGRAM,11,True,products/images/papaya.jpg,products/thumbnails/papaya_thumb.jpg
+118,Strawberry,High-quality Strawberry available in best price.,429.71,406.73,UNIT,11,True,products/images/strawberry.jpg,products/thumbnails/strawberry_thumb.jpg
+119,Strawberry,High-quality Strawberry available in best price.,859.42,813.46,KILOGRAM,11,True,products/images/strawberry.jpg,products/thumbnails/strawberry_thumb.jpg
+120,Blueberry,High-quality Blueberry available in best price.,458.42,380.78,UNIT,11,True,products/images/blueberry.jpg,products/thumbnails/blueberry_thumb.jpg
+121,Blueberry,High-quality Blueberry available in best price.,916.84,761.56,KILOGRAM,11,True,products/images/blueberry.jpg,products/thumbnails/blueberry_thumb.jpg
+122,Tomato,High-quality Tomato available in best price.,264.87,243.32,UNIT,11,True,products/images/tomato.jpg,products/thumbnails/tomato_thumb.jpg
+123,Tomato,High-quality Tomato available in best price.,529.74,486.64,KILOGRAM,11,True,products/images/tomato.jpg,products/thumbnails/tomato_thumb.jpg
+124,Potato,High-quality Potato available in best price.,485.44,433.57,UNIT,11,True,products/images/potato.jpg,products/thumbnails/potato_thumb.jpg
+125,Potato,High-quality Potato available in best price.,970.88,867.14,KILOGRAM,11,True,products/images/potato.jpg,products/thumbnails/potato_thumb.jpg
+126,Onion,High-quality Onion available in best price.,138.7,112.4,UNIT,11,True,products/images/onion.jpg,products/thumbnails/onion_thumb.jpg
+127,Onion,High-quality Onion available in best price.,277.4,224.8,KILOGRAM,11,True,products/images/onion.jpg,products/thumbnails/onion_thumb.jpg
+128,Carrot,High-quality Carrot available in best price.,236.18,191.34,UNIT,11,True,products/images/carrot.jpg,products/thumbnails/carrot_thumb.jpg
+129,Carrot,High-quality Carrot available in best price.,472.36,382.68,KILOGRAM,11,True,products/images/carrot.jpg,products/thumbnails/carrot_thumb.jpg
+130,Cabbage,High-quality Cabbage available in best price.,158.59,131.89,UNIT,11,True,products/images/cabbage.jpg,products/thumbnails/cabbage_thumb.jpg
+131,Cabbage,High-quality Cabbage available in best price.,317.18,263.78,KILOGRAM,11,True,products/images/cabbage.jpg,products/thumbnails/cabbage_thumb.jpg
+132,Cauliflower,High-quality Cauliflower available in best price.,188.61,169.16,UNIT,11,True,products/images/cauliflower.jpg,products/thumbnails/cauliflower_thumb.jpg
+133,Cauliflower,High-quality Cauliflower available in best price.,377.22,338.32,KILOGRAM,11,True,products/images/cauliflower.jpg,products/thumbnails/cauliflower_thumb.jpg
+134,Spinach,High-quality Spinach available in best price.,233.97,196.68,UNIT,11,True,products/images/spinach.jpg,products/thumbnails/spinach_thumb.jpg
+135,Spinach,High-quality Spinach available in best price.,467.94,393.36,KILOGRAM,11,True,products/images/spinach.jpg,products/thumbnails/spinach_thumb.jpg
+136,Broccoli,High-quality Broccoli available in best price.,182.14,150.68,UNIT,11,True,products/images/broccoli.jpg,products/thumbnails/broccoli_thumb.jpg
+137,Broccoli,High-quality Broccoli available in best price.,364.28,301.36,KILOGRAM,11,True,products/images/broccoli.jpg,products/thumbnails/broccoli_thumb.jpg
+138,Pumpkin,High-quality Pumpkin available in best price.,425.54,385.53,UNIT,11,True,products/images/pumpkin.jpg,products/thumbnails/pumpkin_thumb.jpg
+139,Pumpkin,High-quality Pumpkin available in best price.,851.08,771.06,KILOGRAM,11,True,products/images/pumpkin.jpg,products/thumbnails/pumpkin_thumb.jpg
+140,Cucumber,High-quality Cucumber available in best price.,146.16,127.57,UNIT,11,True,products/images/cucumber.jpg,products/thumbnails/cucumber_thumb.jpg
+141,Cucumber,High-quality Cucumber available in best price.,292.32,255.14,KILOGRAM,11,True,products/images/cucumber.jpg,products/thumbnails/cucumber_thumb.jpg
+142,Lettuce,High-quality Lettuce available in best price.,156.84,136.42,UNIT,11,True,products/images/lettuce.jpg,products/thumbnails/lettuce_thumb.jpg
+143,Lettuce,High-quality Lettuce available in best price.,313.68,272.84,KILOGRAM,11,True,products/images/lettuce.jpg,products/thumbnails/lettuce_thumb.jpg
+144,Bell Pepper,High-quality Bell Pepper available in best price.,11.42,9.85,UNIT,11,True,products/images/bell_pepper.jpg,products/thumbnails/bell_pepper_thumb.jpg
+145,Bell Pepper,High-quality Bell Pepper available in best price.,22.84,19.7,KILOGRAM,11,True,products/images/bell_pepper.jpg,products/thumbnails/bell_pepper_thumb.jpg
+146,Zucchini,High-quality Zucchini available in best price.,345.69,287.43,UNIT,11,True,products/images/zucchini.jpg,products/thumbnails/zucchini_thumb.jpg
+147,Zucchini,High-quality Zucchini available in best price.,691.38,574.86,KILOGRAM,11,True,products/images/zucchini.jpg,products/thumbnails/zucchini_thumb.jpg
+148,Beetroot,High-quality Beetroot available in best price.,239.03,213.34,UNIT,11,True,products/images/beetroot.jpg,products/thumbnails/beetroot_thumb.jpg
+149,Beetroot,High-quality Beetroot available in best price.,478.06,426.68,KILOGRAM,11,True,products/images/beetroot.jpg,products/thumbnails/beetroot_thumb.jpg
+150,Radish,High-quality Radish available in best price.,386.91,331.46,UNIT,11,True,products/images/radish.jpg,products/thumbnails/radish_thumb.jpg
+151,Radish,High-quality Radish available in best price.,773.82,662.92,KILOGRAM,11,True,products/images/radish.jpg,products/thumbnails/radish_thumb.jpg
+152,Brinjal,High-quality Brinjal available in best price.,50.09,47.26,UNIT,11,True,products/images/brinjal.jpg,products/thumbnails/brinjal_thumb.jpg
+153,Brinjal,High-quality Brinjal available in best price.,100.18,94.52,KILOGRAM,11,True,products/images/brinjal.jpg,products/thumbnails/brinjal_thumb.jpg
+154,Green Beans,High-quality Green Beans available in best price.,19.14,17.31,UNIT,11,True,products/images/green_beans.jpg,products/thumbnails/green_beans_thumb.jpg
+155,Green Beans,High-quality Green Beans available in best price.,38.28,34.62,KILOGRAM,11,True,products/images/green_beans.jpg,products/thumbnails/green_beans_thumb.jpg
+156,Peas,High-quality Peas available in best price.,494.01,450.76,UNIT,11,True,products/images/peas.jpg,products/thumbnails/peas_thumb.jpg
+157,Peas,High-quality Peas available in best price.,988.02,901.52,KILOGRAM,11,True,products/images/peas.jpg,products/thumbnails/peas_thumb.jpg
+158,Sweet Corn,High-quality Sweet Corn available in best price.,390.64,331.57,UNIT,11,True,products/images/sweet_corn.jpg,products/thumbnails/sweet_corn_thumb.jpg
+159,Sweet Corn,High-quality Sweet Corn available in best price.,781.28,663.14,KILOGRAM,11,True,products/images/sweet_corn.jpg,products/thumbnails/sweet_corn_thumb.jpg
+160,Garlic,High-quality Garlic available in best price.,415.28,389.9,UNIT,11,True,products/images/garlic.jpg,products/thumbnails/garlic_thumb.jpg
+161,Garlic,High-quality Garlic available in best price.,830.56,779.8,KILOGRAM,11,True,products/images/garlic.jpg,products/thumbnails/garlic_thumb.jpg
+162,Ginger,High-quality Ginger available in best price.,438.19,376.43,UNIT,11,True,products/images/ginger.jpg,products/thumbnails/ginger_thumb.jpg
+163,Ginger,High-quality Ginger available in best price.,876.38,752.86,KILOGRAM,11,True,products/images/ginger.jpg,products/thumbnails/ginger_thumb.jpg
+164,Lemon,High-quality Lemon available in best price.,469.95,419.16,UNIT,11,True,products/images/lemon.jpg,products/thumbnails/lemon_thumb.jpg
+165,Lemon,High-quality Lemon available in best price.,939.9,838.32,KILOGRAM,11,True,products/images/lemon.jpg,products/thumbnails/lemon_thumb.jpg
+166,Coriander Leaves,High-quality Coriander Leaves available in best price.,375.74,319.79,UNIT,11,True,products/images/coriander_leaves.jpg,products/thumbnails/coriander_leaves_thumb.jpg
+167,Coriander Leaves,High-quality Coriander Leaves available in best price.,751.48,639.58,KILOGRAM,11,True,products/images/coriander_leaves.jpg,products/thumbnails/coriander_leaves_thumb.jpg
+168,Mint Leaves,High-quality Mint Leaves available in best price.,282.86,251.13,UNIT,11,True,products/images/mint_leaves.jpg,products/thumbnails/mint_leaves_thumb.jpg
+169,Mint Leaves,High-quality Mint Leaves available in best price.,565.72,502.26,KILOGRAM,11,True,products/images/mint_leaves.jpg,products/thumbnails/mint_leaves_thumb.jpg
+170,Chili,High-quality Chili available in best price.,372.71,343.92,UNIT,11,True,products/images/chili.jpg,products/thumbnails/chili_thumb.jpg
+171,Chili,High-quality Chili available in best price.,745.42,687.84,KILOGRAM,11,True,products/images/chili.jpg,products/thumbnails/chili_thumb.jpg
+172,Avocado,High-quality Avocado available in best price.,287.65,262.02,UNIT,11,True,products/images/avocado.jpg,products/thumbnails/avocado_thumb.jpg
+173,Avocado,High-quality Avocado available in best price.,575.3,524.04,KILOGRAM,11,True,products/images/avocado.jpg,products/thumbnails/avocado_thumb.jpg
+174,Pomegranate,High-quality Pomegranate available in best price.,439.07,384.88,UNIT,11,True,products/images/pomegranate.jpg,products/thumbnails/pomegranate_thumb.jpg
+175,Pomegranate,High-quality Pomegranate available in best price.,878.14,769.76,KILOGRAM,11,True,products/images/pomegranate.jpg,products/thumbnails/pomegranate_thumb.jpg
+176,Kiwi,High-quality Kiwi available in best price.,421.15,351.18,UNIT,11,True,products/images/kiwi.jpg,products/thumbnails/kiwi_thumb.jpg
+177,Kiwi,High-quality Kiwi available in best price.,842.3,702.36,KILOGRAM,11,True,products/images/kiwi.jpg,products/thumbnails/kiwi_thumb.jpg
+178,Pear,High-quality Pear available in best price.,83.24,73.05,UNIT,11,True,products/images/pear.jpg,products/thumbnails/pear_thumb.jpg
+179,Pear,High-quality Pear available in best price.,166.48,146.1,KILOGRAM,11,True,products/images/pear.jpg,products/thumbnails/pear_thumb.jpg
+180,Guava,High-quality Guava available in best price.,251.78,226.22,UNIT,11,True,products/images/guava.jpg,products/thumbnails/guava_thumb.jpg
+181,Guava,High-quality Guava available in best price.,503.56,452.44,KILOGRAM,11,True,products/images/guava.jpg,products/thumbnails/guava_thumb.jpg
