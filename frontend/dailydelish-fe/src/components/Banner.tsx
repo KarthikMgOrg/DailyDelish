@@ -16,10 +16,10 @@ import avacado_banner from "@/../public/avacado_banner.avif";
 
 export default function Banner() {
   return (
-    <section className="relative w-full h-[200px] mt-1 rounded-2xl flex flex-col md:flex-row items-center overflow-hidden justify-between ">
+    <section className="relative w-full h-[250px] mt-1 rounded-2xl flex flex-col md:flex-row items-center overflow-hidden justify-between shadow-xl">
       <div className="absolute inset-0 rounded-2xl">
         <Image
-          style={{ height: "200px", objectFit: "cover" }}
+          style={{ height: "250px", objectFit: "cover" }}
           src={avacado_banner}
           alt="banner-1"
         />

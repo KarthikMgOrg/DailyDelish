@@ -1,5 +1,7 @@
 import ImageCarousel from "@/components/Carousel";
 import Banner from "@/components/Banner";
+import Categories from "@/components/Categories";
+import Footer from "@/components/Footer";
 
 interface productType {
   product_id: number;
@@ -30,9 +32,12 @@ async function getProducts() {
 export default async function Home() {
   // const response = await getProducts();
   return (
-    <main className="mt-5 w-full">
-      <ImageCarousel />
-      <Banner />
+    <main className="mt-5 w-full ">
+      <div className="frame m-[5vh]">
+        <ImageCarousel />
+        <Banner />
+        <Categories />
+      </div>
     </main>
   );
 }

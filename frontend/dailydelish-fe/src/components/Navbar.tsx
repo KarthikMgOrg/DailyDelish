@@ -31,7 +31,7 @@ export default function Navbar() {
         <div className="relative ml-2 flex flex-row w-1/2 ">
           <Search className="absolute left-2 text-black " size={20} />
           <Input
-            className="h-[50px] text-center ml-1 rounded-3xl bg-gray-100"
+            className="h-[50px] text-center ml-1 rounded-2xl bg-gray-100"
             type="text"
             placeholder="Search"
           />
