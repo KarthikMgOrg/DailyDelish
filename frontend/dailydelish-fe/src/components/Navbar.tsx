@@ -9,6 +9,8 @@ import { Menu } from "lucide-react";
 import { Input } from "./ui/input";
 import dailyDelishLogo from "@/../public/daily_delish.jpg";
 import { Search } from "lucide-react";
+import LoginModal from "./LoginModal";
+import CartModal from "./ui/CartModal";
 
 export default function Navbar() {
   return (
@@ -24,8 +26,10 @@ export default function Navbar() {
           <span style={{ color: "var(--secondary-color)" }}>Delish</span>
         </div>
         <div className="ml-2 vertical-line text-extralight bg-gray-300"></div>
-        <div className="ml-2 text-sm delivery-info flex flex-col">
-          <p className="font-bold">Delivery in 8 minutes</p>
+        <div className="ml-2 text-sm delivery-info">
+          <p className="font-bold text-lg overflow-clip">
+            Delivery in 8 minutes
+          </p>
           <p>Chennai, Tamilnadu, 600088</p>
         </div>
         <div className="relative ml-2 flex flex-row w-1/2 ">
@@ -37,13 +41,14 @@ export default function Navbar() {
           />
         </div>
         <div className="relative login-btn text-md ml-4 p-1">
-          <Link href={"/login"}>
+          {/* <Link href={"/login"}>
             <span className="absolute inset-0"></span>
             Login
-          </Link>
+          </Link> */}
+          <LoginModal />
         </div>
 
-        <div
+        {/* <div
           className="relative product-cart text-md ml-2 p-1 w-auto rounded-xl"
           style={{
             backgroundColor: "var(--primary-color)",
@@ -56,7 +61,8 @@ export default function Navbar() {
             <span className="absolute inset-0"></span>
             My Cart
           </Link>
-        </div>
+        </div> */}
+        <CartModal />
       </div>
     </nav>
   );

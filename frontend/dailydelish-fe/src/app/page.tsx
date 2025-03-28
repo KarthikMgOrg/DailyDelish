@@ -2,6 +2,7 @@ import ImageCarousel from "@/components/Carousel";
 import Banner from "@/components/Banner";
 import Categories from "@/components/Categories";
 import Footer from "@/components/Footer";
+import Subcategory from "@/components/Subcategory";
 
 interface productType {
   product_id: number;
@@ -37,6 +38,7 @@ export default async function Home() {
         <ImageCarousel />
         <Banner />
         <Categories />
+        <Subcategory />
       </div>
     </main>
   );

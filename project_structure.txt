@@ -1,0 +1,79 @@
+📂 your-project/
+├── 📂 public/                     # Static assets (images, fonts, etc.)
+│   ├── 📂 images/                 # Store static images
+│   ├── favicon.ico                # Favicon
+│   └── logo.png                   # App logo
+│
+├── 📂 src/                        # Source code (recommended for maintainability)
+│   ├── 📂 app/                    # Next.js 14+ (App Router structure)
+│   │   ├── 📂 (routes)/
+│   │   │   ├── 📂 cart/           # Cart page (`/cart`)
+│   │   │   ├── 📂 checkout/       # Checkout page (`/checkout`)
+│   │   │   ├── 📂 orders/         # Orders page (`/orders`)
+│   │   │   ├── 📂 profile/        # User profile (`/profile`)
+│   │   │   ├── 📂 products/       # Product listing (`/products`)
+│   │   │   │   ├── 📂 [id]/       # Dynamic route for product details (`/products/:id`)
+│   │   │   ├── 📂 wishlist/       # Wishlist page (`/wishlist`)
+│   │   │   ├── 📂 layout.tsx      # Global layout (header/footer)
+│   │   │   ├── 📜 page.tsx        # Homepage (`/`)
+│   │   │   ├── 📜 not-found.tsx   # Custom 404 page
+│   │   ├── 📂 api/                # API routes (if using Next.js API)
+│   │   ├── 📜 layout.tsx          # Global layout wrapper
+│   │   ├── 📜 page.tsx            # Home page
+│   │   ├── 📜 loading.tsx         # Loading state for SSR
+│   │   ├── 📜 error.tsx           # Custom error page
+│   │
+│   ├── 📂 components/             # Reusable UI components
+│   │   ├── 📂 ui/                 # General UI components (buttons, inputs)
+│   │   ├── 📂 layout/             # Layout components (header, footer)
+│   │   ├── 📂 cart/               # Cart components
+│   │   ├── 📂 product/            # Product components
+│   │   ├── 📂 forms/              # Form components
+│   │   ├── 📜 Navbar.tsx          # Navigation bar
+│   │   ├── 📜 Footer.tsx          # Footer
+│   │   ├── 📜 Button.tsx          # Reusable button
+│   │
+│   ├── 📂 store/                  # Global state management
+│   │   ├── 📜 cartStore.ts        # Zustand store for cart
+│   │   ├── 📜 authStore.ts        # Zustand store for authentication
+│   │   ├── 📜 wishlistStore.ts    # Zustand store for wishlist
+│   │
+│   ├── 📂 hooks/                  # Custom hooks
+│   │   ├── 📜 useCart.ts          # Hook for cart logic
+│   │   ├── 📜 useAuth.ts          # Hook for authentication
+│   │   ├── 📜 useWishlist.ts      # Hook for wishlist
+│   │
+│   ├── 📂 lib/                    # Utility functions, helpers
+│   │   ├── 📜 fetcher.ts          # Fetch function (for React Query)
+│   │   ├── 📜 formatCurrency.ts   # Currency formatting
+│   │   ├── 📜 constants.ts        # Constants (e.g., API endpoints)
+│   │
+│   ├── 📂 services/               # API service layer
+│   │   ├── 📜 productService.ts   # Fetch product data
+│   │   ├── 📜 cartService.ts      # Cart API functions
+│   │   ├── 📜 authService.ts      # Authentication API functions
+│   │
+│   ├── 📂 context/                # React Context API (if needed)
+│   │   ├── 📜 AuthContext.tsx     # User authentication context
+│   │   ├── 📜 CartContext.tsx     # Cart context
+│   │
+│   ├── 📂 styles/                 # Global styles
+│   │   ├── 📜 globals.css         # Global CSS
+│   │   ├── 📜 theme.ts            # Theme configuration
+│   │
+│   ├── 📂 types/                  # TypeScript types
+│   │   ├── 📜 product.ts          # Product type definitions
+│   │   ├── 📜 user.ts             # User type definitions
+│   │
+│   ├── 📂 config/                 # Configuration files
+│   │   ├── 📜 env.ts              # Environment variables
+│   │
+│   ├── 📂 middleware/             # Middlewares (auth, logging)
+│   │   ├── 📜 authMiddleware.ts   # Protect routes
+│   │
+│   ├── 📜 app.tsx                 # Root app component
+│
+├── 📜 next.config.js              # Next.js configuration
+├── 📜 tsconfig.json               # TypeScript configuration
+├── 📜 package.json                # Dependencies
+└── 📜 .gitignore                  # Git ignore file

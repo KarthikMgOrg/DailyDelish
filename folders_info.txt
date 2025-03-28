@@ -1,0 +1,16 @@
+📂 src/
+ ├── 📂 app/               # Next.js pages & components
+ ├── 📂 components/        # Reusable UI components
+ ├── 📂 lib/               # Utility functions (e.g., api.js)
+ ├── 📂 services/          # Business logic and API integrations
+ ├── 📂 hooks/             # Custom React hooks (e.g., useAuth)
+ ├── 📂 context/           # Global state management (e.g., AuthContext)
+ ├── 📂 config/            # Environment & app config
+
+
+
+✅ lib/api.js (Low-Level API Utility)
+This is where you set up Axios or fetch to handle basic API requests.
+
+✅ services/productService.js (Business Logic)
+This file calls apiClient but adds business logic, like error handling or data transformation.
