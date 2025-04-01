@@ -1,5 +1,6 @@
-<img width="197" alt="DailyDelishFavicon" src="https://github.com/user-attachments/assets/bcbf0bc3-7c96-456e-83a9-ef9bfe8a482e" />
-
+<p align="center">
+  <img width="197" alt="DailyDelishFavicon" src="https://github.com/user-attachments/assets/bcbf0bc3-7c96-456e-83a9-ef9bfe8a482e" />
+</p>
 
 
 DailyDelish is a **subscription-based fruits and vegetables web app** built with Django and Django Rest Framework (DRF). The platform allows users to subscribe to fresh, high-quality produce and manage their deliveries seamlessly.
