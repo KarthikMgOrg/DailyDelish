@@ -1,4 +1,3 @@
-# DailyDelish
 <img width="197" alt="DailyDelishFavicon" src="https://github.com/user-attachments/assets/bcbf0bc3-7c96-456e-83a9-ef9bfe8a482e" />
 
 
