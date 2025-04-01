@@ -10,8 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
 from datetime import timedelta
 from pathlib import Path
+from PIL import Image
+
+Image.init()  # Initialize image formats
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -47,12 +52,13 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'corsheaders',
 
-    #user defined models
+    # user defined models
     'custom_auth',
     'delivery_address',
     'product_category',
     'products',
     'subscriptions',
+    'product_variants',
 ]
 
 MIDDLEWARE = [
@@ -99,7 +105,6 @@ AUTHENTICATION_BACKENDS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
 
 
 REST_FRAMEWORK = {
@@ -207,7 +212,7 @@ SITE_ID = 1
 
 AUTH_USER_MODEL = 'custom_auth.User'
 
-ACCOUNT_USER_MODEL_USERNAME_FIELD=None
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
@@ -216,7 +221,7 @@ ACCOUNT_LOGIN_METHODS = {'email'}
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 # LOGIN_REDIRECT_URL = "/"
 SOCIALACCOUNT_PROVIDERS = {}
-ACCOUNT_USERNAME_REQUIRED=False
+ACCOUNT_USERNAME_REQUIRED = False
 
 SOCIALACCOUNT_ADAPTER = 'custom_auth.adapters.MySocialAccountAdapter'
 
@@ -224,3 +229,18 @@ SOCIALACCOUNT_ADAPTER = 'custom_auth.adapters.MySocialAccountAdapter'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
+# AWS Settings
+INSTALLED_APPS += ['storages']
+
+AWS_ACCESS_KEY_ID = os.getenv('aws_access_key')
+AWS_SECRET_ACCESS_KEY = os.getenv('aws_secret_access_key')
+AWS_STORAGE_BUCKET_NAME = os.getenv('s3_bucket_name')
+AWS_S3_REGION_NAME = os.getenv('aws_region')
+
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+# Store uploaded media files on S3
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+# Media URL for accessing files
+MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/"
