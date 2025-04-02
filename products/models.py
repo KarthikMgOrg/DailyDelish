@@ -18,6 +18,7 @@ class Product(models.Model):
         upload_to='products/images/', null=True, blank=True)
     thumbnail = models.ImageField(
         upload_to='products/thumbnails/', null=True, blank=True)
+    size = models.CharField(max_length=10, default="1 Unit")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
