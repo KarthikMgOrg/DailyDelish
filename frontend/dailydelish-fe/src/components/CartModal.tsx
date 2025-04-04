@@ -22,9 +22,9 @@ export default function CartModal() {
           My Cart
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-lg rounded-3xl">
+      <DialogContent className="max-w-lg rounded-3xl cursor-pointer">
         <DialogHeader>
-          <DialogTitle>My Cart</DialogTitle>
+          <DialogTitle className="cursor-pointer">My Cart</DialogTitle>
           <div className="flex flex-col gap-2">
             <p>Item 1</p>
             <p>Item 2</p>

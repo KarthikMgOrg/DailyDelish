@@ -1,9 +1,11 @@
 import apiClient from "@/lib/apiClient";
 import publicApiClient from "@/lib/publicApiClient";
 
-export async function getProducts() {
+export async function getProducts(currentPage: number) {
   try {
-    const response = await publicApiClient.get("/products");
+    const response = await publicApiClient.get(
+      `/products/?page=${currentPage}`
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching products: ", error);
@@ -13,7 +15,9 @@ export async function getProducts() {
 
 export async function getProductVariants(productId: number) {
   try {
-    const response = await apiClient.get(`/products/variants/${productId}`);
+    const response = await publicApiClient.get(
+      `/products/variants/${productId}`
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching product variants: ", error);

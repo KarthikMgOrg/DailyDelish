@@ -2,43 +2,58 @@
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Timer } from "lucide-react";
-import { getProducts, getProductVariants } from "@/services/productService";
+// import { getProducts, getProductVariants } from "@/services/productService";
 import { useProductStore } from "@/store/useProductStore";
 import { useState } from "react";
-
-interface Product {
-  product_id: number;
-  name: string;
-  description: string;
-  mrp: string;
-  available_price: string;
-  unit: string;
-  is_available: boolean;
-  image: string;
-  thumbnail: string;
-  created_at: string;
-  updated_at: string;
-  category: number;
-  size: string;
-}
+import { Product, Variant } from "@/types/productType";
+import { Skeleton } from "./ui/skeleton";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
+import ItemIncDecButton from "./ItemIncDecButton";
 
 type ProductProps = {
   product: Product;
+  productId: number;
 };
 
-async function fetchProductVariants(productId: number): Promise<void> {
-  try {
-    const response = await getProductVariants(productId);
-    console.log(response);
-  } catch (error: any) {
-    return error.message;
-  }
-}
+// async function fetchProductVariants(productId: number): Promise<void> {
+//   try {
+//     const response = await getProductVariants(productId);
+//     console.log(response.results, " is the variants ");
 
-export default function ProductCard({ product }: ProductProps) {
-  const { variants, cart, fetchVariants, addToCart } = useProductStore();
+//     return response.results;
+//   } catch (error: any) {
+//     return error.message;
+//   }
+// }
+
+export default function ProductCard({ product, productId }: ProductProps) {
+  const { variants, cart, products, getItemCount, fetchVariants, addToCart } =
+    useProductStore();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const itemCount = getItemCount(product.product_id);
+
+  const handleAddClick = async (e: any, product: Product) => {
+    console.log(e, " is the event");
+    e.target.style = "backgroundColor:red";
+
+    if (!variants[product.product_id]) {
+      await fetchVariants(product.product_id);
+    }
+    const updatedVariants: Record<number, Variant[]> =
+      useProductStore.getState().variants;
+    console.log(updatedVariants, " is the updatedVariants");
+    if (updatedVariants[product.product_id]?.length > 0) {
+      setSelectedProduct(product);
+      setIsModalOpen(true);
+    } else {
+      addToCart(product, productId);
+    }
+
+    // update Button Item Count
+  };
+
   return (
     <div
       key={product.product_id}
@@ -75,17 +90,45 @@ export default function ProductCard({ product }: ProductProps) {
         <p className="mt-1 text-lg font-extrabold">{product.name}</p>
         <p className=" text-gray-500">{product.size}</p>
         <div className="button-with-price flex flex-row justify-between">
-          <div className="price text-sm text-black font-extrabold">
-            {product.mrp}
-          </div>
           <button
-            onClick={() => fetchProductVariants(product.product_id)}
-            className="mt-1 ml-[250px] h-[30px] w-[60px] rounded-2xl bg-[#deeed8] border border-[#9ac38c] text-[#35851f] font-primary font-bold text-sm"
+            onClick={(e) => handleAddClick(e, product)}
+            className={`mt-1 ml-[250px] h-[30px] w-[60px] rounded-2xl border font-primary font-bold text-sm
+            ${
+              itemCount > 0
+                ? "bg-[#328617] border-[#5cc97b] text-white" // Active state
+                : "bg-[#deeed8] border-[#9ac38c] text-[#35851f]" // Default state
+            }`}
           >
-            Add
+            {itemCount > 0 ? (
+              <ItemIncDecButton
+                itemCount={itemCount}
+                productId={product.product_id}
+              />
+            ) : (
+              "Add"
+            )}
           </button>
         </div>
       </div>
+
+      {isModalOpen && selectedProduct && (
+        <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+          <DialogContent className="max-w-lg rounded-3xl">
+            <DialogHeader>
+              <DialogTitle>Select an option</DialogTitle>
+            </DialogHeader>
+            <div className="flex flex-col gap-2">
+              {variants[selectedProduct.product_id]?.map((variant) => (
+                <div key={variant.id} className="variant-item">
+                  <p>Name: {variant.name}</p>
+                  <p>MRP: {variant.mrp}</p>
+                  <p>Available Price: {variant.available_price}</p>
+                </div>
+              ))}
+            </div>
+          </DialogContent>
+        </Dialog>
+      )}
     </div>
   );
 }
