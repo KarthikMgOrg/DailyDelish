@@ -3,9 +3,15 @@
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import { useProductStore } from "@/store/useProductStore";
 
 export default function CartSheet() {
   const [open, setOpen] = useState(false);
+  const cartCount = useProductStore((state) =>
+    Object.values(state.cart).reduce((sum, item) => sum + item.quantity, 0)
+  );
+  const cartAmount = useProductStore((state) => state.getCartAmount());
+
   return (
     <>
       {/* Cart Button */}
@@ -15,9 +21,24 @@ export default function CartSheet() {
         <SheetTrigger asChild>
           <Button
             onClick={() => setOpen(true)}
-            className="relative h-[40px] text-md ml-2 w-auto p-2 rounded-2xl bg-primary-color text-white font-bold"
+            style={{ width: "150px" }}
+            className={`
+              relative h-[40px] text-md ml-2 w-auto p-2 rounded-2xl bg-primary-color text-white font-bold
+              ${
+                cartCount === 0
+                  ? "bg-gray-400 hover:disabled:"
+                  : "bg-primary-color"
+              }
+              `}
           >
-            My Cart
+            {cartCount === 0 ? (
+              "My Cart"
+            ) : (
+              <div className="flex flex-col">
+                <p>{cartCount} items</p>
+                <p>₹{cartAmount}</p>
+              </div>
+            )}
           </Button>
         </SheetTrigger>
         <SheetContent className="p-4">

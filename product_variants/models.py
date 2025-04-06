@@ -10,7 +10,7 @@ class ProductVariants(models.Model):
         ('KILOGRAM', 'Kilogram'),
     ]
     product_id = models.ForeignKey(
-        Product, models.SET_NULL, null=True, blank=True)
+        Product, models.SET_NULL, null=True, blank=True, related_name="variants")
     name = models.CharField(
         max_length=20, choices=UNIT_TYPE_CHOICES, null=False, default='Kilogram')
     mrp = models.DecimalField(decimal_places=2, max_digits=10)

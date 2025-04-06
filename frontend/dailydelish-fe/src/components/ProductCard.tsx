@@ -7,8 +7,8 @@ import { useProductStore } from "@/store/useProductStore";
 import { useState } from "react";
 import { Product, Variant } from "@/types/productType";
 import { Skeleton } from "./ui/skeleton";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import ItemIncDecButton from "./ItemIncDecButton";
+import VariantModal from "./variantModal";
 
 type ProductProps = {
   product: Product;
@@ -89,10 +89,12 @@ export default function ProductCard({ product, productId }: ProductProps) {
         </Badge>
         <p className="mt-1 text-lg font-extrabold">{product.name}</p>
         <p className=" text-gray-500">{product.size}</p>
-        <div className="button-with-price flex flex-row justify-between">
+        <div className="button-with-price flex flex-row items-center">
+          <div className="font-extrabold">From ₹</div>
+          <span className="font-extrabold">{product.min_price}</span>
           <button
             onClick={(e) => handleAddClick(e, product)}
-            className={`mt-1 ml-[250px] h-[30px] w-[60px] rounded-2xl border font-primary font-bold text-sm
+            className={`ml-[150px] h-[30px] w-[60px] rounded-2xl border font-primary font-bold text-sm
             ${
               itemCount > 0
                 ? "bg-[#328617] border-[#5cc97b] text-white" // Active state
@@ -112,22 +114,11 @@ export default function ProductCard({ product, productId }: ProductProps) {
       </div>
 
       {isModalOpen && selectedProduct && (
-        <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-          <DialogContent className="max-w-lg rounded-3xl">
-            <DialogHeader>
-              <DialogTitle>Select an option</DialogTitle>
-            </DialogHeader>
-            <div className="flex flex-col gap-2">
-              {variants[selectedProduct.product_id]?.map((variant) => (
-                <div key={variant.id} className="variant-item">
-                  <p>Name: {variant.name}</p>
-                  <p>MRP: {variant.mrp}</p>
-                  <p>Available Price: {variant.available_price}</p>
-                </div>
-              ))}
-            </div>
-          </DialogContent>
-        </Dialog>
+        <VariantModal
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          selectedProduct={selectedProduct}
+        />
       )}
     </div>
   );

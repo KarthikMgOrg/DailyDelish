@@ -3,7 +3,6 @@ import { create } from "zustand";
 import { Variant, Product } from "@/types/productType";
 import { devtools } from "zustand/middleware";
 import { AxiosResponse } from "axios";
-import { get } from "http";
 
 interface ProductStore {
   variants: Record<number, Variant[]>;
@@ -16,6 +15,7 @@ interface ProductStore {
   addToCart: (product: Product, productId: number) => void;
   removeFromCart: (productId: number) => void;
   getItemCount: (productId: number) => 0;
+  getCartAmount: () => number;
 }
 
 export const useProductStore = create<ProductStore>()(
@@ -88,6 +88,14 @@ export const useProductStore = create<ProductStore>()(
     },
     getItemCount: (productId: number) => {
       return get().cart[productId]?.quantity;
+    },
+    getCartAmount() {
+      const cart = get().cart;
+      const amount = Object.values(cart).reduce((total, item) => {
+        const price = item.product.min_price || 0;
+        return total + price * item.quantity;
+      }, 0);
+      return amount.toFixed(2);
     },
   }))
 );

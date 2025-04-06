@@ -10,7 +10,6 @@ import { Input } from "./ui/input";
 import dailyDelishLogo from "@/../public/daily_delish.jpg";
 import { Search } from "lucide-react";
 import LoginModal from "./LoginModal";
-import CartModal from "./CartModal";
 import CartSheet from "./cartSheet";
 
 export default function Navbar() {

@@ -9,6 +9,7 @@ export interface Product {
   image: string;
   thumbnail: string;
   size: string;
+  min_price: number;
 }
 
 export interface Variant {
