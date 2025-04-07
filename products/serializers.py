@@ -6,6 +6,7 @@ from .models import Product
 
 class ProductSerializer(ModelSerializer):
     min_price = serializers.SerializerMethodField()
+    sku = serializers.SerializerMethodField()
 
     class Meta:
         model = Product
@@ -14,3 +15,7 @@ class ProductSerializer(ModelSerializer):
     def get_min_price(self, obj):
         variant = obj.variants.order_by("mrp").first()
         return variant.mrp if variant else None
+
+    def get_sku(self, obj):
+        variant = obj.variants.order_by("mrp").first()
+        return variant.sku if variant else None

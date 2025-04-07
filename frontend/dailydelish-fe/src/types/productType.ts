@@ -1,4 +1,5 @@
 export interface Product {
+  mrp: number;
   product_id: number;
   name: string;
   description: string;
@@ -10,9 +11,11 @@ export interface Product {
   thumbnail: string;
   size: string;
   min_price: number;
+  sku: string;
 }
 
 export interface Variant {
+  product_image: string;
   id: number;
   name: string;
   mrp: number;

@@ -16,9 +16,14 @@ export default function VariantModal({
   const { variants } = useProductStore();
   return (
     <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-      <DialogContent className="max-w-lg rounded-3xl">
+      <DialogContent
+        className="rounded-3xl"
+        style={{ width: "500px", padding: "20px", margin: "5px" }}
+      >
         <DialogHeader>
-          <DialogTitle>Select an option</DialogTitle>
+          <DialogTitle style={{ font: "font-primary" }}>
+            Select an option
+          </DialogTitle>
         </DialogHeader>
         <div className="flex flex-col gap-2">
           {variants[selectedProduct.product_id]?.map((variant) => (

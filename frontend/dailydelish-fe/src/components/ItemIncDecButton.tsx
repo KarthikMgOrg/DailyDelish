@@ -4,24 +4,24 @@ import { Minus, Plus } from "lucide-react";
 
 type ItemIncDecButtonProps = {
   itemCount: number;
-  productId: number;
+  sku: string;
 };
 
 export default function ItemIncDecButton({
   itemCount,
-  productId,
+  sku,
 }: ItemIncDecButtonProps) {
   const { cart, addToCart, removeFromCart } = useProductStore();
-  const existingItem = cart[productId].product;
+  const existingItem = cart[sku].product;
 
   const handleIncrement = (e: any) => {
     e.stopPropagation();
-    addToCart(existingItem, productId);
+    addToCart(sku);
   };
 
   const handleDecrement = (e: any) => {
     e.stopPropagation();
-    removeFromCart(productId);
+    removeFromCart(sku);
   };
 
   return (

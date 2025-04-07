@@ -32,12 +32,9 @@ export default function ProductCard({ product, productId }: ProductProps) {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const itemCount = getItemCount(product.product_id);
+  const itemCount = getItemCount(product.sku);
 
-  const handleAddClick = async (e: any, product: Product) => {
-    console.log(e, " is the event");
-    e.target.style = "backgroundColor:red";
-
+  const handleAddClickProduct = async (e: any, product: Product) => {
     if (!variants[product.product_id]) {
       await fetchVariants(product.product_id);
     }
@@ -48,7 +45,7 @@ export default function ProductCard({ product, productId }: ProductProps) {
       setSelectedProduct(product);
       setIsModalOpen(true);
     } else {
-      addToCart(product, productId);
+      addToCart(product.sku);
     }
 
     // update Button Item Count
@@ -93,7 +90,7 @@ export default function ProductCard({ product, productId }: ProductProps) {
           <div className="font-extrabold">From ₹</div>
           <span className="font-extrabold">{product.min_price}</span>
           <button
-            onClick={(e) => handleAddClick(e, product)}
+            onClick={(e) => handleAddClickProduct(e, product)}
             className={`ml-[150px] h-[30px] w-[60px] rounded-2xl border font-primary font-bold text-sm
             ${
               itemCount > 0
@@ -102,10 +99,7 @@ export default function ProductCard({ product, productId }: ProductProps) {
             }`}
           >
             {itemCount > 0 ? (
-              <ItemIncDecButton
-                itemCount={itemCount}
-                productId={product.product_id}
-              />
+              <ItemIncDecButton itemCount={itemCount} sku={product.sku} />
             ) : (
               "Add"
             )}

@@ -13,14 +13,34 @@ export async function getProducts(currentPage: number) {
   }
 }
 
+export async function getProductByID(productId: number) {
+  try {
+    const response = await publicApiClient.get(`/products/${productId}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching products: ", error);
+    throw error;
+  }
+}
+
 export async function getProductVariants(productId: number) {
   try {
     const response = await publicApiClient.get(
-      `/products/variants/${productId}`
+      `/product_variants/${productId}`
     );
     return response.data;
   } catch (error) {
     console.error("Error fetching product variants: ", error);
+    throw error;
+  }
+}
+
+export async function getVariantBySku(sku: string) {
+  try {
+    const response = await publicApiClient.get(`/product_variants/sku/${sku}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching products: ", error);
     throw error;
   }
 }

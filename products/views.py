@@ -14,3 +14,10 @@ from rest_framework.permissions import AllowAny
 class ListProductsView(ListAPIView):
     queryset = Product.objects.prefetch_related('variants').all()
     serializer_class = ProductSerializer
+
+
+@permission_classes([AllowAny])
+class DetailProductsView(RetrieveAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    lookup_field = 'product_id'

@@ -3,18 +3,20 @@ import { create } from "zustand";
 import { Variant, Product } from "@/types/productType";
 import { devtools } from "zustand/middleware";
 import { AxiosResponse } from "axios";
+import { getProductByID, getVariantBySku } from "@/services/productService";
 
 interface ProductStore {
   variants: Record<number, Variant[]>;
-  cart: Record<number, { product: Product; quantity: number }>;
+  cart: Record<string, { product: Product; quantity: number }>;
   products: Product[];
   next: string;
   previous: string;
   fetchProducts: (url?: number) => Promise<void>;
   fetchVariants: (productId: number) => Promise<void>;
-  addToCart: (product: Product, productId: number) => void;
-  removeFromCart: (productId: number) => void;
-  getItemCount: (productId: number) => 0;
+  addToCart: (sku: string) => void;
+  removeFromCart: (sku: string) => void;
+  getItemCount: (sku: string) => 0;
+  getVariantCount: (uniqueVariantId: string) => 0;
   getCartAmount: () => number;
 }
 
@@ -52,15 +54,16 @@ export const useProductStore = create<ProductStore>()(
         }));
       }
     },
-    addToCart: (product, productId) => {
-      // debugger;
-      // set((state) => ({ cart: [...state.cart, product] }), false, "addToCart");
+    addToCart: async (sku: string) => {
+      console.log("skuId passed");
+      let product = await getVariantBySku(sku);
+      product = product.data;
       set((state) => {
-        const existingItem = state.cart[product.product_id];
+        const existingItem = state.cart[sku];
         return {
           cart: {
             ...state.cart,
-            [product.product_id]: {
+            [sku]: {
               product,
               quantity: existingItem ? existingItem.quantity + 1 : 1,
             },
@@ -68,17 +71,17 @@ export const useProductStore = create<ProductStore>()(
         };
       });
     },
-    removeFromCart: (productId) => {
+    removeFromCart: (sku: string) => {
       // debugger;
       set((state) => {
-        const existingItem = state.cart[productId];
+        const existingItem = state.cart[sku];
         if (!existingItem) return state;
         const newQuantity = existingItem.quantity - 1;
         const updatedCart = { ...state.cart };
         if (newQuantity <= 0) {
-          delete updatedCart[productId];
+          delete updatedCart[sku];
         } else {
-          updatedCart[productId] = {
+          updatedCart[sku] = {
             ...existingItem,
             quantity: newQuantity,
           };
@@ -86,13 +89,16 @@ export const useProductStore = create<ProductStore>()(
         return { cart: updatedCart };
       });
     },
-    getItemCount: (productId: number) => {
-      return get().cart[productId]?.quantity;
+    getItemCount: (sku: string) => {
+      return get().cart[sku]?.quantity;
     },
+    getVariantCount(uniqueVariantId: string) {},
     getCartAmount() {
       const cart = get().cart;
       const amount = Object.values(cart).reduce((total, item) => {
-        const price = item.product.min_price || 0;
+        console.log(item, " is the current product in cart");
+
+        const price = item.product.mrp || 0;
         return total + price * item.quantity;
       }, 0);
       return amount.toFixed(2);
