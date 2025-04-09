@@ -7,7 +7,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
     TokenVerifyView,
 )
-from custom_auth.views import CustomTokenObtainPairView
+from custom_auth.views import CookieTokenObtainPairView
 from django.conf import settings
 from django.conf.urls.static import static
 import debug_toolbar
@@ -16,7 +16,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("__debug__/", include(debug_toolbar.urls)),
     path('accounts/', include('allauth.urls')),
-    path('api/v1/token/', CustomTokenObtainPairView.as_view(),
+    path('api/v1/token/', CookieTokenObtainPairView.as_view(),
          name='token_obtain_pair'),
     path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/v1/token/verify/', TokenVerifyView.as_view(), name='token_verify'),

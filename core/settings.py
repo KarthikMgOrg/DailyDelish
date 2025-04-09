@@ -68,9 +68,9 @@ INTERNAL_IPS = [
 
 MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -121,8 +121,9 @@ REST_FRAMEWORK = {
         "rest_framework.parsers.FormParser",
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'custom_auth.authentication.CookieJWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
@@ -139,6 +140,9 @@ SIMPLE_JWT = {
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://localhost:3001"]
+
+# For CSRF
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Project API',

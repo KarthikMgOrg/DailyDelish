@@ -11,6 +11,8 @@ import dailyDelishLogo from "@/../public/daily_delish.jpg";
 import { Search } from "lucide-react";
 import LoginModal from "./LoginModal";
 import CartSheet from "./cartSheet";
+import { checkAuth } from "@/services/authService";
+import UserDropDown from "./UserDropdown";
 
 export default function Navbar() {
   return (
@@ -40,12 +42,12 @@ export default function Navbar() {
             placeholder="Search"
           />
         </div>
-        <div className="relative login-btn text-md ml-4 p-1">
+        <div className="relative login-btn hover:bg-white text-md ml-4 p-1">
           {/* <Link href={"/login"}>
             <span className="absolute inset-0"></span>
             Login
           </Link> */}
-          <LoginModal />
+          {<LoginModal />}
         </div>
 
         {/* <div

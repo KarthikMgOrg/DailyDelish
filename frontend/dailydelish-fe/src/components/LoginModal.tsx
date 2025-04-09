@@ -14,7 +14,10 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { X } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { loginUser } from "@/services/authService";
+import { checkAuth, loginUser } from "@/services/authService";
+import { toast } from "sonner";
+import { useEffect } from "react";
+import UserDropDown from "./UserDropdown";
 
 export default function LoginModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,29 +30,55 @@ export default function LoginModal() {
   const handeLogin = async () => {
     setLoading(true);
     setError("");
+    // debugger;
 
     try {
       const response = await loginUser({ email, password });
-      localStorage.setItem("token", response.data.access);
-      localStorage.setItem("refresh", response.data.refresh);
+      // localStorage.setItem("token", response.data.access);
+      // localStorage.setItem("refresh", response.data.refresh);
+      toast.success("Login successful");
       setIsOpen(false);
+      const authCheck = await checkAuth();
+      setIsAuthenticated(authCheck.logged_in);
       router.push("/");
-    } catch (error: any) {
-      setError(error?.message || "Invalid email or password");
+    } catch (e: any) {
+      setError(e?.message || "Invalid email or password");
+      toast.error(error);
     }
     setLoading(false);
   };
 
-  return (
+  const protectedCall = async () => {
+    const response = await checkAuth();
+    return response.logged_in;
+  };
+
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const check = async () => {
+      try {
+        const data = await protectedCall();
+        setIsAuthenticated(data); // Or however your response looks
+      } catch (error) {
+        setIsAuthenticated(false);
+      }
+    };
+    check();
+  }, []);
+
+  return isAuthenticated ? (
+    <UserDropDown />
+  ) : (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button
+        <button
           className="relative text-black p-0 m-0 bg-transparent"
-          size={"sm"}
-          variant="default"
+          // size={"sm"}
+          // variant="default"
         >
           Login
-        </Button>
+        </button>
       </DialogTrigger>
       <DialogContent className="max-w-lg rounded-3xl">
         <DialogHeader>
