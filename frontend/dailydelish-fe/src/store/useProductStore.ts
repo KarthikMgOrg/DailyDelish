@@ -18,6 +18,7 @@ interface ProductStore {
   getItemCount: (sku: string) => 0;
   getVariantCount: (uniqueVariantId: string) => 0;
   getCartAmount: () => number;
+  getTotalItemCountByProductId: (productId: number) => number;
 }
 
 export const useProductStore = create<ProductStore>()(
@@ -102,6 +103,21 @@ export const useProductStore = create<ProductStore>()(
         return total + price * item.quantity;
       }, 0);
       return amount.toFixed(2);
+    },
+    getTotalItemCountByProductId: (productId: number) => {
+      const { cart, variants } = get();
+      const variantList = variants[productId] || [];
+      let total = 0;
+
+      // Include base product SKU if present
+      for (const sku in cart) {
+        const item = cart[sku];
+        if (item.product.product_id === productId) {
+          total += item.quantity;
+        }
+      }
+
+      return total;
     },
   }))
 );

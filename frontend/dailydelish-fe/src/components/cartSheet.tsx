@@ -1,9 +1,18 @@
 "use client";
 
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetHeader,
+  SheetTitle,
+} from "./ui/sheet";
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { useProductStore } from "@/store/useProductStore";
+import { X, Timer } from "lucide-react";
+import CartSheetItems from "./CartSheetItems";
+import BillDetails from "./BillDetails";
 
 export default function CartSheet() {
   const [open, setOpen] = useState(false);
@@ -11,6 +20,7 @@ export default function CartSheet() {
     Object.values(state.cart).reduce((sum, item) => sum + item.quantity, 0)
   );
   const cartAmount = useProductStore((state) => state.getCartAmount());
+  const { cart } = useProductStore();
 
   return (
     <>
@@ -26,7 +36,7 @@ export default function CartSheet() {
               relative h-[40px] text-md ml-2 w-auto p-2 rounded-2xl bg-primary-color text-white font-bold
               ${
                 cartCount === 0
-                  ? "bg-gray-400 hover:disabled:"
+                  ? "bg-gray-400 pointer-events-none"
                   : "bg-primary-color"
               }
               `}
@@ -41,17 +51,31 @@ export default function CartSheet() {
             )}
           </Button>
         </SheetTrigger>
-        <SheetContent className="p-4">
-          <div className="flex justify-between items-center">
-            <h2 className="text-lg font-bold">Your Cart</h2>
-            <Button variant="ghost" onClick={() => setOpen(false)}>
-              Close
+        <SheetContent className="p-0.5 [&>button.absolute]:hidden overflow-y-auto bg-gray-200">
+          <div
+            className="flex flex-row justify-between gap-x-2 w-full"
+            style={{ fontFamily: "var(--font-primary)" }}
+          >
+            <SheetTitle className="text-sm m-2">My Cart</SheetTitle>
+            {/* <h2 className="text-lg font-bold">Your Cart</h2> */}
+            <Button
+              className="h-[40px] w-[40px]"
+              size="icon"
+              variant="ghost"
+              onClick={() => setOpen(false)}
+            >
+              <X
+                className="shadow-none hover:shadow-none"
+                style={{
+                  height: "40px",
+                  width: "40px",
+                  pointerEvents: "none",
+                }}
+              />
             </Button>
           </div>
-          <div className="mt-4">
-            {/* TODO: Replace with dynamic cart items */}
-            <p>No items in cart yet!</p>
-          </div>
+          <CartSheetItems />
+          {/* <p>No items in cart yet!</p> */}
         </SheetContent>
       </Sheet>
     </>

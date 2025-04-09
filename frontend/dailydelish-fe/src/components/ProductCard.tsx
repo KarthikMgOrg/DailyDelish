@@ -33,22 +33,22 @@ export default function ProductCard({ product, productId }: ProductProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const itemCount = getItemCount(product.sku);
-
+  const totalCount = useProductStore((state) =>
+    state.getTotalItemCountByProductId(product.product_id)
+  );
   const handleAddClickProduct = async (e: any, product: Product) => {
     if (!variants[product.product_id]) {
       await fetchVariants(product.product_id);
     }
     const updatedVariants: Record<number, Variant[]> =
       useProductStore.getState().variants;
-    console.log(updatedVariants, " is the updatedVariants");
+
     if (updatedVariants[product.product_id]?.length > 0) {
       setSelectedProduct(product);
       setIsModalOpen(true);
     } else {
       addToCart(product.sku);
     }
-
-    // update Button Item Count
   };
 
   return (
