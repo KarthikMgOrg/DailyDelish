@@ -20,6 +20,8 @@ class CustomResponseMiddleware(MiddlewareMixin):
             return response
         if request.path.startswith("/api/v1/products/protected/"):
             return response
+        if request.path.startswith("/api/v1/custom_auth/logout/"):
+            return response
 
         if hasattr(response, 'data'):
 

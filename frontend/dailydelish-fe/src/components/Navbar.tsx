@@ -16,8 +16,8 @@ import UserDropDown from "./UserDropdown";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-background shadow-sm z-10 ">
-      <div className="navbar-items flex flex-row m-0.5 h-[100px]">
+    <nav className="fixed top-0 left-0 h-7 w-full bg-background shadow-sm z-10 ">
+      <div className="navbar-items flex flex-row m-0.5">
         {/* <Image
           className="h-auto w-[100px] object-contain rounded-2xl"
           src={dailyDelishLogo}

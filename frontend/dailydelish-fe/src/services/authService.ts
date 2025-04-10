@@ -23,3 +23,14 @@ export async function checkAuth() {
     throw new Error(error.response?.data?.detail || "Unauthorized");
   }
 }
+
+export async function logoutUser() {
+  try {
+    const response = await apiClient.post("/custom_auth/logout/");
+    return response.data;
+  } catch (error: any) {
+    throw new Error(
+      error.response?.data?.detail || "Unable to perform the operation"
+    );
+  }
+}

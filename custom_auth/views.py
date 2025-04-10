@@ -2,6 +2,8 @@ from weakref import ref
 from django.shortcuts import render
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 from .serializers import CustomTokenObtainPairSerializer
@@ -41,4 +43,15 @@ class CookieTokenObtainPairView(TokenObtainPairView):
                 max_age=7*24*3600
 
             )
+        return response
+
+
+class LogoutView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        response = Response({"detail": "Logged out"}, status=200)
+        response.delete_cookie("access")  # or whatever cookie you're using
+        response.delete_cookie("refresh")  # or whatever cookie you're using
+        # response.set_cookie("logged_in", False)
         return response

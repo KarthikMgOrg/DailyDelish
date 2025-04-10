@@ -7,18 +7,21 @@ import {
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
+import { logoutUser } from "@/services/authService";
+import { useAuthStore } from "@/store/useAuthStore";
+import { toast } from "sonner";
 
 export default function UserDropDown() {
+  const { logout } = useAuthStore();
+
   const router = useRouter();
   const handleLogout = async () => {
+    // debugger;
     // Call your logout API
-    await fetch("/api/logout", {
-      method: "POST",
-      credentials: "include",
-    });
-
-    // Refresh or route back
+    await logout();
     router.refresh(); // or router.push("/login")
+    toast.success("You have been logged out!");
+    // Refresh or route back
   };
 
   return (

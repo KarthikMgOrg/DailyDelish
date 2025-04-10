@@ -22,8 +22,8 @@ interface productType {
 
 export default async function Home() {
   return (
-    <main className="mt-5 w-full ">
-      <div className="frame m-[5vh]">
+    <main className="mt-0 w-full ">
+      <div className="frame">
         <ImageCarousel />
         <Banner />
         <Categories />

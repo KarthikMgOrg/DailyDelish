@@ -18,54 +18,52 @@ import { checkAuth, loginUser } from "@/services/authService";
 import { toast } from "sonner";
 import { useEffect } from "react";
 import UserDropDown from "./UserDropdown";
+import { useAuthStore } from "@/store/useAuthStore";
 
 export default function LoginModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
 
-  const handeLogin = async () => {
-    setLoading(true);
-    setError("");
-    // debugger;
+  const { isAuthenticated, checkAuthStatus, loading } = useAuthStore();
 
+  const handeLogin = async () => {
     try {
-      const response = await loginUser({ email, password });
-      // localStorage.setItem("token", response.data.access);
-      // localStorage.setItem("refresh", response.data.refresh);
+      await loginUser({ email, password });
       toast.success("Login successful");
       setIsOpen(false);
-      const authCheck = await checkAuth();
-      setIsAuthenticated(authCheck.logged_in);
+      await checkAuthStatus();
       router.push("/");
     } catch (e: any) {
       setError(e?.message || "Invalid email or password");
       toast.error(error);
     }
-    setLoading(false);
   };
 
-  const protectedCall = async () => {
-    const response = await checkAuth();
-    return response.logged_in;
-  };
+  // const protectedCall = async () => {
+  //   const response = await checkAuth();
+  //   return response.logged_in;
+  // };
 
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  // const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const check = async () => {
-      try {
-        const data = await protectedCall();
-        setIsAuthenticated(data); // Or however your response looks
-      } catch (error) {
-        setIsAuthenticated(false);
-      }
-    };
-    check();
+    checkAuthStatus();
   }, []);
+  // useEffect(() => {
+  //   const check = async () => {
+  //     try {
+  //       const data = await protectedCall();
+  //       setIsAuthenticated(data); // Or however your response looks
+  //     } catch (error) {
+  //       setIsAuthenticated(false);
+  //     }
+  //   };
+  //   check();
+  // }, []);
 
   return isAuthenticated ? (
     <UserDropDown />
