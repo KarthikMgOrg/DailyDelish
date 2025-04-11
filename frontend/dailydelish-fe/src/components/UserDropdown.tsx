@@ -19,7 +19,7 @@ export default function UserDropDown() {
     // debugger;
     // Call your logout API
     await logout();
-    router.refresh(); // or router.push("/login")
+    router.push("/");
     toast.success("You have been logged out!");
     // Refresh or route back
   };
@@ -29,14 +29,14 @@ export default function UserDropDown() {
       <DropdownMenuTrigger asChild>
         <Avatar className="cursor-pointer">
           <AvatarImage
-            className="object-cover w-3 h-3 rounded-full"
+            className="object-cover w-2.5 h-2.5 rounded-full"
             src="https://github.com/shadcn.png"
             alt="@shadcn"
           />
           <AvatarFallback>U</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-12">
+      <DropdownMenuContent forceMount={true} sideOffset={8}>
         <DropdownMenuItem onClick={() => router.push("/profile")}>
           Profile
         </DropdownMenuItem>

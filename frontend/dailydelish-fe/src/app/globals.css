@@ -91,6 +91,9 @@ h1 {
 h2 {
   font-size: 2rem;
 }
+html {
+  scrollbar-gutter: stable;
+}
 
 /* Links */
 /* a {

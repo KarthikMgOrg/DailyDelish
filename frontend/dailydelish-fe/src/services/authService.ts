@@ -8,7 +8,7 @@ interface loginCreds {
 
 export async function loginUser(credentials: loginCreds) {
   try {
-    const response = await apiClient.post("/token/", credentials);
+    const response = await apiClient.post("/custom_auth/login/", credentials);
     return response.data;
   } catch (error: any) {
     throw new Error(error.response?.data?.detail || "Login failed");
@@ -32,5 +32,14 @@ export async function logoutUser() {
     throw new Error(
       error.response?.data?.detail || "Unable to perform the operation"
     );
+  }
+}
+
+export async function userDetails() {
+  try {
+    const response = await apiClient.get(`/custom_auth/user_details/`);
+    return response.data;
+  } catch (error: any) {
+    error.response?.data?.detail || "Unable to perform the operation";
   }
 }

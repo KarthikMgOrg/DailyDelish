@@ -40,3 +40,15 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
         # data['name'] = user.name
 
         return data
+
+
+class UserDetailsSerializer(serializers.ModelSerializer):
+    delivery_address = serializers.SerializerMethodField()
+
+    class Meta:
+        model = User
+        fields = ['id', 'name', 'email', 'delivery_address']
+
+    def get_delivery_address(self, obj):
+        item = obj.user_details.order_by("address_id").first()
+        return item.street_address + ", " + item.city+" " + item.state + ", " + item.country+", "+item.postal_code

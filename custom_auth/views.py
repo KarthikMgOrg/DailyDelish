@@ -3,7 +3,11 @@ from django.shortcuts import render
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.generics import RetrieveAPIView
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import permission_classes
+from .models import User
+from .serializers import UserDetailsSerializer
 
 # Create your views here.
 from .serializers import CustomTokenObtainPairSerializer
@@ -55,3 +59,17 @@ class LogoutView(APIView):
         response.delete_cookie("refresh")  # or whatever cookie you're using
         # response.set_cookie("logged_in", False)
         return response
+
+
+class UserDetailsView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        user = User.objects.prefetch_related(
+            'user_details').get(id=request.user.id)
+        serializer = UserDetailsSerializer(user)
+        return Response(serializer.data)
+
+    # queryset = User.objects.prefetch_related('user_details').all()
+    # serializer_class = UserDetailsSerializer
+    # lookup_field = 'id'

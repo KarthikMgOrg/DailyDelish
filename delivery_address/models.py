@@ -5,7 +5,8 @@ from custom_auth.models import User
 
 class DeliveryAddress(models.Model):
     address_id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(to=User, on_delete=models.CASCADE, null=False, blank=False)
+    user = models.ForeignKey(
+        to=User, on_delete=models.CASCADE, null=False, blank=False, related_name='user_details')
     street_address = models.TextField(null=False)
     city = models.CharField(max_length=100, null=False)
     state = models.CharField(max_length=100, null=False)

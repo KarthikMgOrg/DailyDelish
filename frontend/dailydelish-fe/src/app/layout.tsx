@@ -34,7 +34,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased pt-7`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased pt-7 w-full max-w-screen overflow-x-hidden`}
       >
         <NavBar />
         {children}

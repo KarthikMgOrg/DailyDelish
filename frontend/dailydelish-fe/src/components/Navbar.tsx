@@ -24,8 +24,10 @@ export default function Navbar() {
           alt="dailydelish-logo"
         ></Image> */}
         <div className="title text-2xl font-extrabold ml-1">
-          <span style={{ color: "var(--primary-color)" }}>Daily</span>
-          <span style={{ color: "var(--secondary-color)" }}>Delish</span>
+          <Link href={"/"}>
+            <span style={{ color: "var(--primary-color)" }}>Daily</span>
+            <span style={{ color: "var(--secondary-color)" }}>Delish</span>
+          </Link>
         </div>
         <div className="ml-2 vertical-line text-extralight bg-gray-300"></div>
         <div className="ml-2 text-sm delivery-info">
