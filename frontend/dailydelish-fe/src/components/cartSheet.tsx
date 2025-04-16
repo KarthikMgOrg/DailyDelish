@@ -36,7 +36,7 @@ export default function CartSheet() {
               relative h-[40px] text-md ml-2 w-auto p-2 rounded-2xl bg-primary-color text-white font-bold
               ${
                 cartCount === 0
-                  ? "bg-gray-400 pointer-events-none"
+                  ? "bg-gray-400 cursor-not-allowed hover:bg-gray-400"
                   : "bg-primary-color"
               }
               `}

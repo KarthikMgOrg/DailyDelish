@@ -10,20 +10,25 @@ interface AuthState {
 }
 
 export const useAuthStore = create<AuthState>()(
-  devtools((set, get) => ({
-    isAuthenticated: false,
-    loading: true,
-    checkAuthStatus: async () => {
-      try {
-        const result = await checkAuth();
-        set({ isAuthenticated: result.logged_in, loading: false });
-      } catch (error) {
-        set({ isAuthenticated: false, loading: false });
-      }
-    },
-    logout: async () => {
-      await logoutUser();
-      set({ isAuthenticated: false });
-    },
-  }))
+  devtools(
+    (set, get) => ({
+      isAuthenticated: false,
+      loading: true,
+      checkAuthStatus: async () => {
+        try {
+          const result = await checkAuth();
+          set({ isAuthenticated: result.logged_in, loading: false });
+        } catch (error) {
+          set({ isAuthenticated: false, loading: false });
+        }
+      },
+      logout: async () => {
+        await logoutUser();
+        set({ isAuthenticated: false });
+      },
+    }),
+    {
+      name: "auth store",
+    }
+  )
 );

@@ -15,9 +15,23 @@ export async function loginUser(credentials: loginCreds) {
   }
 }
 
+export async function registerUser(credentials: loginCreds) {
+  try {
+    const response = await publicApiClient.post(
+      "/custom_auth/register/",
+      credentials
+    );
+    return response;
+  } catch (error: any) {
+    throw new Error(error.response?.data?.detail || "Registration Failed");
+  }
+}
+
 export async function checkAuth() {
   try {
     const response = await apiClient.get("/products/protected/");
+    console.log(response.data, " is the auth check response");
+
     return response.data;
   } catch (error: any) {
     throw new Error(error.response?.data?.detail || "Unauthorized");

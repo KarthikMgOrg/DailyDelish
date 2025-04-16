@@ -9,7 +9,7 @@ import { Menu } from "lucide-react";
 import { Input } from "./ui/input";
 import dailyDelishLogo from "@/../public/daily_delish.jpg";
 import { Search } from "lucide-react";
-import LoginModal from "./LoginModal";
+import LoginModal from "./LoginRegisterModal";
 import CartSheet from "./cartSheet";
 import { checkAuth } from "@/services/authService";
 import UserDropDown from "./UserDropdown";

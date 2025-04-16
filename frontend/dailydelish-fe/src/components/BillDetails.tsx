@@ -1,3 +1,5 @@
+"use client";
+
 import { NotebookText } from "lucide-react";
 import { Bike } from "lucide-react";
 import { ShoppingBag } from "lucide-react";
@@ -9,6 +11,11 @@ type BillDetailsProps = {
 
 export default function BillDetails({ cartAmount }: BillDetailsProps) {
   if (cartAmount <= 0) return "Your cart is a little lonely 🥲";
+
+  const handleBuy = () => {
+    console.log("clicked buy now");
+  };
+
   return (
     <div className="bill-box" style={{ textAlign: "left" }}>
       <p
@@ -61,7 +68,7 @@ export default function BillDetails({ cartAmount }: BillDetailsProps) {
         <div className="absolute left-1 font-extrabold top-0.75 translate -transform-x-0 transform-y-0 text-white">
           ₹{cartAmount}
         </div>
-        <div className="absolute right-1 font-extrabold top-0.75 translate -transform-x-0 transform-y-0 text-white">
+        <div className="absolute right-1 cursor-pointer font-extrabold top-0.75 translate -transform-x-0 transform-y-0 text-white">
           Buy Now
         </div>
       </div>

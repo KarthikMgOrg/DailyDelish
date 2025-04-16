@@ -15,7 +15,7 @@ export interface Product {
 }
 
 export interface Variant {
-  product_image: string;
+  image: string;
   id: number;
   name: string;
   mrp: number;

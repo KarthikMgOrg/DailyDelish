@@ -6,31 +6,22 @@ import { Timer } from "lucide-react";
 import { useProductStore } from "@/store/useProductStore";
 import { useState } from "react";
 import { Product, Variant } from "@/types/productType";
-import { Skeleton } from "./ui/skeleton";
 import ItemIncDecButton from "./ItemIncDecButton";
 import VariantModal from "./variantModal";
+import { useUIStore } from "@/store/useUIStore";
 
 type ProductProps = {
   product: Product;
   productId: number;
 };
 
-// async function fetchProductVariants(productId: number): Promise<void> {
-//   try {
-//     const response = await getProductVariants(productId);
-//     console.log(response.results, " is the variants ");
-
-//     return response.results;
-//   } catch (error: any) {
-//     return error.message;
-//   }
-// }
-
 export default function ProductCard({ product, productId }: ProductProps) {
   const { variants, cart, products, getItemCount, fetchVariants, addToCart } =
     useProductStore();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { openVariantModal } = useUIStore();
+  const isOpen = useUIStore((state) => state.isVariantModalOpen);
 
   const itemCount = getItemCount(product.sku);
   const totalCount = useProductStore((state) =>
@@ -45,7 +36,7 @@ export default function ProductCard({ product, productId }: ProductProps) {
 
     if (updatedVariants[product.product_id]?.length > 0) {
       setSelectedProduct(product);
-      setIsModalOpen(true);
+      openVariantModal();
     } else {
       addToCart(product.sku);
     }
@@ -64,6 +55,7 @@ export default function ProductCard({ product, productId }: ProductProps) {
           fill
           sizes="sm"
           className="rounded-2xl object-contain"
+          priority={true}
         ></Image>
       </div>
       <div
@@ -107,12 +99,8 @@ export default function ProductCard({ product, productId }: ProductProps) {
         </div>
       </div>
 
-      {isModalOpen && selectedProduct && (
-        <VariantModal
-          isModalOpen={isModalOpen}
-          setIsModalOpen={setIsModalOpen}
-          selectedProduct={selectedProduct}
-        />
+      {isOpen && selectedProduct && (
+        <VariantModal selectedProduct={selectedProduct} />
       )}
     </div>
   );

@@ -2,20 +2,21 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { useProductStore } from "@/store/useProductStore";
 import { Product } from "@/types/productType";
 import VariantItem from "./variantItem";
+import { useUIStore } from "@/store/useUIStore";
+
 type VariantModalProps = {
-  isModalOpen: boolean;
-  setIsModalOpen: (open: boolean) => void;
   selectedProduct: Product;
 };
 
-export default function VariantModal({
-  isModalOpen,
-  setIsModalOpen,
-  selectedProduct,
-}: VariantModalProps) {
+export default function VariantModal({ selectedProduct }: VariantModalProps) {
   const { variants } = useProductStore();
+  const { isVariantModalOpen, openVariantModal, closeVariantModal } =
+    useUIStore();
   return (
-    <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+    <Dialog
+      open={isVariantModalOpen}
+      onOpenChange={(open) => (open ? openVariantModal() : closeVariantModal())}
+    >
       <DialogContent
         className="rounded-3xl"
         style={{ width: "500px", padding: "20px", margin: "5px" }}

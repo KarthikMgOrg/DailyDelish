@@ -29,7 +29,7 @@ export default function VariantItem({ variant }: variantItemProps) {
   return (
     <div className="variant-item rounded-2xl shadow-md flex flex-row gap-x-1 p-2 w-full">
       <Image
-        src={variant.product_image}
+        src={variant.image}
         alt="product-image"
         width={50}
         height={100}
