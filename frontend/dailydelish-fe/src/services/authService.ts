@@ -6,6 +6,20 @@ interface loginCreds {
   password: string;
 }
 
+interface addressType {
+  street: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  country: string;
+}
+
+interface registerCreds {
+  email: string;
+  password: string;
+  address: addressType;
+}
+
 export async function loginUser(credentials: loginCreds) {
   try {
     const response = await apiClient.post("/custom_auth/login/", credentials);
@@ -15,7 +29,7 @@ export async function loginUser(credentials: loginCreds) {
   }
 }
 
-export async function registerUser(credentials: loginCreds) {
+export async function registerUser(credentials: registerCreds) {
   try {
     const response = await publicApiClient.post(
       "/custom_auth/register/",

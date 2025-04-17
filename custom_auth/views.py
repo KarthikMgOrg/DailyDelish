@@ -10,6 +10,8 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import permission_classes
 from .models import User
 from .serializers import UserDetailsSerializer
+from delivery_address.models import DeliveryAddress
+from django.db import transaction
 
 # Create your views here.
 from .serializers import CustomTokenObtainPairSerializer
@@ -84,9 +86,23 @@ class RegisterView(APIView):
         data = request.data
         if User.objects.filter(email=data['email']).exists():
             return Response({"data": "Username/Email already exists"}, status=status.HTTP_401_UNAUTHORIZED)
-        user = User.objects.create_user(
-            email=data['email'],
-            name=data['email'].split("@")[0],
-            password=data['password']
-        )
+
+        print(data, " is the data")
+        with transaction.atomic():
+            user = User.objects.create_user(
+                email=data['email'],
+                name=data['email'].split("@")[0],
+                password=data['password']
+            )
+
+            DeliveryAddress.objects.create(
+                user=user,
+                street_address=data['address']['street'],
+                city=data['address']['city'],
+                state=data['address']['state'],
+                postal_code=data['address']['postalCode'],
+                country=data['address']['country'],
+                is_default=True
+            )
+
         return Response({"message": "User registered successfully"}, status=status.HTTP_201_CREATED)

@@ -4,6 +4,8 @@ import "./globals.css";
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner";
+import Script from "next/script";
+// import SubscriptionModal from "@/components/SubscriptionModal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,8 +41,13 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Toaster position="bottom-right" />
+        {/* <SubscriptionModal /> */}
         <Footer />
       </body>
+      <Script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        strategy="afterInteractive"
+      />
     </html>
   );
 }

@@ -33,6 +33,14 @@ export default function LoginModal() {
   const [password, setPassword] = useState("");
   // const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [address, setAddress] = useState({
+    street: "",
+    city: "",
+    state: "",
+    postalCode: "",
+    country: "",
+  });
+
   const router = useRouter();
 
   const { openLoginModal, closeLoginModal } = useUIStore();
@@ -58,7 +66,7 @@ export default function LoginModal() {
 
   const handleRegister = async () => {
     try {
-      await registerUser({ email, password });
+      await registerUser({ email, password, address });
       handeLogin();
       toast.success("User registered succesfully!");
     } catch (e: any) {
@@ -89,14 +97,14 @@ export default function LoginModal() {
         Login
       </button>
 
-      <DialogContent className="max-w-xl rounded-3xl p-2 m-2">
+      <DialogContent className="max-w-xl max-h-[90vh] rounded-3xl p-2 m-2 overflow-y-auto">
         <DialogHeader>
           <DialogTitle>
             <span className="text-primary-color font-primary">Daily</span>
             <span className="text-secondary-color font-primary">Delish</span>
           </DialogTitle>
         </DialogHeader>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 overflow-y-auto">
           <Input
             className="h-[60px] w-[60px] rounded-3xl"
             type="email"
@@ -109,6 +117,46 @@ export default function LoginModal() {
             placeholder="Enter your password"
             onChange={(e) => setPassword(e.target.value)}
           />
+          {!isLoginMode && (
+            <>
+              <Input
+                placeholder="Street Address"
+                className="h-[40px] w-[20px] rounded-3xl"
+                onChange={(e) =>
+                  setAddress({ ...address, street: e.target.value })
+                }
+              />
+              <Input
+                placeholder="City"
+                className="h-[40px] w-[40px] rounded-3xl"
+                onChange={(e) =>
+                  setAddress({ ...address, city: e.target.value })
+                }
+              />
+              <Input
+                placeholder="State"
+                className="h-[40px] w-[40px] rounded-3xl"
+                onChange={(e) =>
+                  setAddress({ ...address, state: e.target.value })
+                }
+              />
+              <Input
+                placeholder="Postal Code"
+                className="h-[40px] w-[40px] rounded-3xl"
+                onChange={(e) =>
+                  setAddress({ ...address, postalCode: e.target.value })
+                }
+              />
+              <Input
+                placeholder="Country"
+                className="h-[40px] w-[40px] rounded-3xl"
+                onChange={(e) =>
+                  setAddress({ ...address, country: e.target.value })
+                }
+              />
+            </>
+          )}
+
           <Button
             className="w-full h-[60px] rounded-3xl font-bold text-lg hover:shadow-md bg-primary-color"
             onClick={isLoginMode ? handeLogin : handleRegister}

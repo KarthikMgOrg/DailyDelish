@@ -8,6 +8,9 @@ interface useUIStoreState {
   isVariantModalOpen: boolean;
   openVariantModal: () => void;
   closeVariantModal: () => void;
+  isSubscriptionModalOpen: boolean;
+  openSubscriptionModal: () => void;
+  closeSubscriptionModal: () => void;
 }
 
 export const useUIStore = create<useUIStoreState>()(
@@ -20,6 +23,10 @@ export const useUIStore = create<useUIStoreState>()(
       isVariantModalOpen: false,
       openVariantModal: () => set({ isVariantModalOpen: true }),
       closeVariantModal: () => set({ isVariantModalOpen: false }),
+
+      isSubscriptionModalOpen: false,
+      openSubscriptionModal: () => set({ isSubscriptionModalOpen: true }),
+      closeSubscriptionModal: () => set({ isSubscriptionModalOpen: false }),
     }),
     {
       name: "UI store",

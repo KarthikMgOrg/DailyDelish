@@ -14,6 +14,10 @@ import os
 from datetime import timedelta
 from pathlib import Path
 from PIL import Image
+import os
+
+RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID", "rzp_test_XXXXXXXXXXXX")
+RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET", "your_secret_key")
 
 Image.init()  # Initialize image formats
 
@@ -62,6 +66,7 @@ INSTALLED_APPS = [
     'product_variants',
     'orders',
     'subscription_items',
+    'payment'
 ]
 
 INTERNAL_IPS = [
