@@ -14,7 +14,7 @@ class OrderStatus(models.TextChoices):
 class Order(models.Model):
     order_id = models.AutoField(primary_key=True)
     subscription_id = models.ForeignKey(
-        Subscriptions, on_delete=models.CASCADE, db_column='subscription_id')
+        Subscriptions, on_delete=models.SET_NULL, db_column='subscription_id', null=True, blank=True)
     order_date = models.DateField(default=timezone.now)
     total_amount = models.DecimalField(max_digits=10, decimal_places=2, validators=[
                                        MinValueValidator(Decimal('0.01'))])
@@ -23,5 +23,5 @@ class Order(models.Model):
     created_at = models.DateTimeField(default=timezone.now, editable=False)
 
     class Meta:
-        db_table = 'order_status'
+        db_table = 'orders'
         managed = True

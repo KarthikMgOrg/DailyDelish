@@ -2,6 +2,7 @@
 import { useProductStore } from "@/store/useProductStore";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { useUIStore } from "@/store/useUIStore";
+import Image from "next/image";
 
 export default function SubscriptionModal() {
   const {
@@ -26,12 +27,32 @@ export default function SubscriptionModal() {
           </DialogTitle>
         </DialogHeader>
         {Object.entries(cart).map(([key, { product, quantity }]) => {
+          // return (
+          //   <div key={key}>
+          //     <p>
+          //       {product.name} - ₹{product.mrp}
+          //     </p>
+          //     <p>Qty: {quantity}</p>
+          //   </div>
+          // );
           return (
-            <div key={key}>
-              <p>
-                {product.name} - ₹{product.mrp}
-              </p>
-              <p>Qty: {quantity}</p>
+            <div
+              key={key}
+              className="grid grid-cols-2 justify-items-end gap-x-1 px-3 py-2 w-full bg-gray-100 rounded-2xl shadow-sm text-xs"
+              style={{ fontFamily: "var(--font-primary)" }}
+            >
+              <div className="flex flex-row gap-x-1">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={50}
+                  height={50}
+                />
+                <p>{product.name}</p>
+                <p>
+                  <strong>₹{product.mrp}</strong>
+                </p>
+              </div>
             </div>
           );
         })}

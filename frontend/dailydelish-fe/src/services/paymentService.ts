@@ -1,12 +1,14 @@
 import apiClient from "@/lib/apiClient";
 
-interface createOrderProps {
+interface makeOrderPaymentProps {
   amount: number;
 }
 
-export const createOrder = async ({ amount }: createOrderProps) => {
+export const makeOrderPayment = async ({ amount }: makeOrderPaymentProps) => {
   try {
-    const response = await apiClient.post("/payment/create_order/", { amount });
+    const response = await apiClient.post("/payment/make_order_payment/", {
+      amount,
+    });
     return response.data;
   } catch (error: any) {
     throw new Error(

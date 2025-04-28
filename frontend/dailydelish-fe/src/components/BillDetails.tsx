@@ -6,8 +6,10 @@ import { ShoppingBag } from "lucide-react";
 import { deliveryCharge, handlingCharge } from "@/constants/charges";
 import { useAuthStore } from "@/store/useAuthStore";
 import { useUIStore } from "@/store/useUIStore";
-import { createOrder } from "@/services/paymentService";
+import { makeOrderPayment } from "@/services/paymentService";
 import { toast } from "sonner";
+import apiClient from "@/lib/apiClient";
+import createOrder from "@/services/orderService";
 
 type BillDetailsProps = {
   cartAmount: number;
@@ -27,7 +29,8 @@ export default function BillDetails({ cartAmount }: BillDetailsProps) {
       const totalAmount = cartAmount;
       console.log(totalAmount, " is the amount");
 
-      const res = await createOrder({ amount: cartAmount });
+      const res = await makeOrderPayment({ amount: cartAmount });
+      console.log(res);
 
       const options = {
         key: res.data.key_id,
@@ -36,12 +39,30 @@ export default function BillDetails({ cartAmount }: BillDetailsProps) {
         name: "DailyDelish",
         description: "Order Payment",
         order_id: res.data.order_id,
-        handler: function (response: any) {
+        handler: async function (response: any) {
           toast.success("Payment successful! 🎉");
-          console.log("Razorpay Response:", response);
 
-          // Optionally call backend to verify payment
-          // verifyPayment(response)
+          try {
+            const verifyRes = await apiClient.post("/payment/verify_payment/", {
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature,
+            });
+            console.log("Verification response", verifyRes.data);
+            if (verifyRes.data.success) {
+              // create an order
+              const today = new Date();
+              const formattedDate = today.toISOString().split("T")[0];
+              const orderResp = await createOrder({
+                order_date: formattedDate,
+                total_amount: res.data.amount,
+              });
+              console.log(orderResp, " is the orderResp");
+            }
+          } catch (err) {
+            toast.error("Payment verification failed");
+            console.error("Verification Error", err);
+          }
         },
         prefill: {
           email: "user@example.com", // Replace with real user email
@@ -53,6 +74,8 @@ export default function BillDetails({ cartAmount }: BillDetailsProps) {
 
       const razor = new (window as any).Razorpay(options);
       razor.open();
+
+      // add record to orders table
     } catch (error) {
       toast.error("Payment failed. Try again later.");
       console.error("Payment Error:", error);

@@ -6,6 +6,7 @@ User = get_user_model()
 
 
 class SubscriptionFrequency(models.TextChoices):
+    ONETIME = 'onetime'
     WEEKLY = 'weekly'
     BIWEEKLY = 'biweekly'
     MONTHLY = 'monthly'
@@ -23,7 +24,7 @@ class Subscriptions(models.Model):
     address_id = models.ForeignKey(
         DeliveryAddress, on_delete=models.RESTRICT, blank=False, db_column='address_id')
     frequency = models.CharField(
-        max_length=20, choices=SubscriptionFrequency.choices, default=SubscriptionFrequency.MONTHLY, null=False)
+        max_length=20, choices=SubscriptionFrequency.choices, default=SubscriptionFrequency.ONETIME, null=False)
     status = models.CharField(
         max_length=10, choices=StatusChoices.choices, default=StatusChoices.ACTIVE)
     start_date = models.DateField(null=False)
