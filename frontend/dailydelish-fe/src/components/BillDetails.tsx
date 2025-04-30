@@ -6,6 +6,7 @@ import { ShoppingBag } from "lucide-react";
 import { deliveryCharge, handlingCharge } from "@/constants/charges";
 import { useAuthStore } from "@/store/useAuthStore";
 import { useUIStore } from "@/store/useUIStore";
+import { useProductStore } from "@/store/useProductStore";
 import { makeOrderPayment } from "@/services/paymentService";
 import { toast } from "sonner";
 import apiClient from "@/lib/apiClient";
@@ -21,7 +22,10 @@ export default function BillDetails({ cartAmount }: BillDetailsProps) {
   if (cartAmount <= 0) return "Your cart is a little lonely 🥲";
 
   const handleBuy = async () => {
+    // debugger;
     console.log("clicked buy now");
+    const { cart } = useProductStore.getState();
+
     if (!isAuthenticated) {
       openLoginModal();
     }
@@ -40,7 +44,15 @@ export default function BillDetails({ cartAmount }: BillDetailsProps) {
         description: "Order Payment",
         order_id: res.data.order_id,
         handler: async function (response: any) {
+          const orderId = res.data.order_id;
           toast.success("Payment successful! 🎉");
+          const items = Object.values(cart).map((item) => ({
+            quantity: item.quantity,
+            price_at_order: Number(item.product.mrp),
+            product_id: item.product.product_id,
+          }));
+
+          console.log(items, " is the items");
 
           try {
             const verifyRes = await apiClient.post("/payment/verify_payment/", {
@@ -53,10 +65,14 @@ export default function BillDetails({ cartAmount }: BillDetailsProps) {
               // create an order
               const today = new Date();
               const formattedDate = today.toISOString().split("T")[0];
-              const orderResp = await createOrder({
+              const orderPayload = {
                 order_date: formattedDate,
                 total_amount: res.data.amount,
-              });
+                items: items,
+              };
+              console.log(orderPayload, " is the orderPayload");
+
+              const orderResp = await createOrder(orderPayload);
               console.log(orderResp, " is the orderResp");
             }
           } catch (err) {

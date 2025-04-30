@@ -34,6 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <title>Fresh Produce, Your way</title>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased pt-7 w-full max-w-screen overflow-x-hidden`}

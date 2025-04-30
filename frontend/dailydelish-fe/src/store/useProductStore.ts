@@ -98,7 +98,7 @@ export const useProductStore = create<ProductStore>()(
       getCartAmount() {
         const cart = get().cart;
         const amount = Object.values(cart).reduce((total, item) => {
-          console.log(item, " is the current product in cart");
+          // console.log(item, " is the current product in cart");
 
           const price = item.product.mrp || 0;
           return total + price * item.quantity;

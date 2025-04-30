@@ -1,3 +1,5 @@
-export default async function OrderDetails() {
+"use client";
+
+export default function OrderDetails() {
   return <div>Order Details</div>;
 }
