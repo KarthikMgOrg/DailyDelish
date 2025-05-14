@@ -34,6 +34,9 @@ export const useProductStore = create<ProductStore>()(
         const response: AxiosResponse = await getProducts(currentPage);
         const data = response.data;
 
+        console.log(data, " is the data");
+        
+
         set((state) => ({
           ...state,
           products: data.results,

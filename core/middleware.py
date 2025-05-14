@@ -2,7 +2,6 @@ from django.http import JsonResponse
 from django.utils.deprecation import MiddlewareMixin
 from rest_framework.response import Response as DRFResponse
 
-
 class JWTTokenFromCookieMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
@@ -22,6 +21,9 @@ class CustomResponseMiddleware(MiddlewareMixin):
             return response
         if request.path.startswith("/api/v1/custom_auth/logout/"):
             return response
+        
+        # if isinstance(response, DRFResponse):
+        #     return response
 
         if hasattr(response, 'data'):
 

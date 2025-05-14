@@ -6,6 +6,8 @@ export async function getProducts(currentPage: number) {
     const response = await publicApiClient.get(
       `/products/?page=${currentPage}`
     );
+    console.log(response.data, " is the getProducts");
+    
     return response.data;
   } catch (error) {
     console.error("Error fetching products: ", error);

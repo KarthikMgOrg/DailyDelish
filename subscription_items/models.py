@@ -8,8 +8,8 @@ from django.core.validators import MinValueValidator
 class SubscriptionItems(models.Model):
     subscription_item_id = models.AutoField(primary_key=True)
     subscription_id = models.ForeignKey(
-        to=Subscriptions, null=False, on_delete=models.CASCADE, db_column='subscription_id')
-    product_id = models.ForeignKey(
+        to=Subscriptions, null=False, on_delete=models.CASCADE, db_column='subscription_id', related_name='items')
+    product = models.ForeignKey(
         to=Product, on_delete=models.CASCADE, null=False, db_column='product_id')
     quantity = models.IntegerField(default=1, null=False, blank=False, validators=[
                                    MinValueValidator(1)])

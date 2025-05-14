@@ -3,12 +3,8 @@
 import { userDetails } from "@/services/authService";
 import { useEffect, useState } from "react";
 
-type userDataType = {
-  id: number;
-  name: string;
-  email: string;
-  delivery_address: string;
-};
+
+import {userDataType} from "@/types/userType"
 
 export default function Profile() {
   const [userData, setUserData] = useState<userDataType | null>(null);
