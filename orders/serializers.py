@@ -11,7 +11,7 @@ from order_details.models import OrderDetails
 from subscriptions.models import Subscriptions
 from datetime import datetime
 from rest_framework import serializers
-
+from products.serializers import ProductSerializer
 
 class OrderSerializer(ModelSerializer):
     items = OrderDetailsSerializer(many=True, write_only=True)

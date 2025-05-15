@@ -8,21 +8,44 @@ export default function OrderDetails({
 }) {
   if (!payload) return <div>No Orders Found</div>;
   return (
-    <div className="">
-      <div className="">
-        <h3 className="text-lg font-medium mt-3">Order #{payload.order_id}</h3>
-        <p>Date: {payload.order_date}</p>
-        <p>Status: {payload.status}</p>
-        <p>Total Amount: ₹{payload.total_amount}</p>
-        <h3 className="mt-2 font-semibold">Items:</h3>
-        {payload.items.map((item) => (
-          <div key={item.order_item_id}>
-            <p>Product ID: {item.product_id}</p>
-            <p>Quantity: {item.quantity}</p>
-            <p>Price: {item.price_at_order}</p>
-          </div>
-        ))}
+    <div className="items-center bg-white rounded-2xl p-2 m-2 grid grid-cols-2">
+      <div className="order-details">
+        <div className="delivery-info flex">
+          <img
+            src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=180/assets/ui/delivered_order_new.png"
+            alt="delivery-tick"
+            className="h-[40px] object-cover"
+          />
+          <p className="ml-2 text-xl font-bold">Arrived in 8 minutes</p>
+        </div>
+        <p className="text-md mt-3">
+          <span className="font-bold">Order No:</span> {payload.order_id}
+        </p>
+        <p>
+          <span className="font-bold">Date:</span> {payload.order_date}
+        </p>
+        <p>
+          <span className="font-bold">Status:</span> {payload.status}
+        </p>
+        <p>
+          <span className="font-bold">Total Amount:</span> ₹
+          {payload.total_amount}
+        </p>
       </div>
+      <div className="order-items">
+        <h3>Order Items</h3>
+          <div className="flex gap-2 mt-2">
+            {payload.items.map((item) => (
+              <img
+                key={item.order_item_id}
+                className="h-[50px] w-[50px] rounded-2xl object-cover"
+                src={item.product_id.image}
+                alt={`Product ${item.product_id.name}`}
+              />
+            ))}
+          </div>
+      </div>
+      {/* <h3 className="mt-2 font-semibold">Items:</h3> */}
     </div>
   );
 }

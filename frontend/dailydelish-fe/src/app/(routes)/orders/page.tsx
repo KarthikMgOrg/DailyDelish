@@ -62,14 +62,13 @@ export default function Orders() {
   return (
     <div className="profile-page">
       <main>
-        <h2 className="text-center mt-3 text-xl font-semibold">My Orders</h2>
-        <div className="mt-1 flex flex-col items-center">
+        <div className="mt-1 items-center ">
           {OrderDetailsData && OrderDetailsData.length > 0 ? (
             OrderDetailsData.map((order) => (
               <OrderDetails key={order.order_id} payload={order} />
             ))
           ) : (
-            <p>No orders found</p>
+            <p className="text-center">No orders found</p>
           )}
         </div>
       </main>
