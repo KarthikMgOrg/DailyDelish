@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'subscription_items',
     'payment',
     'order_details',
+    'test_app'
 ]
 
 INTERNAL_IPS = [

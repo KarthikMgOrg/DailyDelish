@@ -6,7 +6,7 @@ import { AxiosResponse } from "axios";
 import { getProductByID, getVariantBySku } from "@/services/productService";
 
 interface ProductStore {
-  variants: Record<number, Variant[]>;
+  variants: Record<number, Variant[]>; 
   cart: Record<string, { product: Product; quantity: number }>;
   products: Product[];
   next: string;
@@ -60,7 +60,6 @@ export const useProductStore = create<ProductStore>()(
         }
       },
       addToCart: async (sku: string) => {
-        console.log("skuId passed");
         let product = await getVariantBySku(sku);
         product = product.data;
         set((state) => {

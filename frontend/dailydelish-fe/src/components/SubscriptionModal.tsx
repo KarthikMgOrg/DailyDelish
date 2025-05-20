@@ -26,36 +26,30 @@ export default function SubscriptionModal() {
             Pick a schedule for your items
           </DialogTitle>
         </DialogHeader>
-        {Object.entries(cart).map(([key, { product, quantity }]) => {
-          // return (
-          //   <div key={key}>
-          //     <p>
-          //       {product.name} - ₹{product.mrp}
-          //     </p>
-          //     <p>Qty: {quantity}</p>
-          //   </div>
-          // );
-          return (
-            <div
-              key={key}
-              className="grid grid-cols-2 justify-items-end gap-x-1 px-3 py-2 w-full bg-gray-100 rounded-2xl shadow-sm text-xs"
-              style={{ fontFamily: "var(--font-primary)" }}
-            >
-              <div className="flex flex-row gap-x-1">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={50}
-                  height={50}
-                />
-                <p>{product.name}</p>
-                <p>
-                  <strong>₹{product.mrp}</strong>
-                </p>
+        <div className="schedule-items overflow-y-auto">
+          {Object.entries(cart).map(([key, { product, quantity }]) => {
+            return (
+              <div
+                key={key}
+                className="grid grid-cols-2 justify-items-end gap-x-1 px-3 py-2 w-full bg-gray-100 rounded-2xl shadow-sm text-xs"
+                style={{ fontFamily: "var(--font-primary)" }}
+              >
+                <div className="flex flex-row gap-x-1">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    width={50}
+                    height={50}
+                  />
+                  <p>{product.name}</p>
+                  <p>
+                    <strong>₹{product.mrp}</strong>
+                  </p>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </DialogContent>
     </Dialog>
   );
