@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'corsheaders',
     'debug_toolbar',
+    'django_celery_results',
 
     # user defined models
     'custom_auth',
@@ -162,6 +163,26 @@ SPECTACULAR_SETTINGS = {
     # OTHER SETTINGS
 }
 
+
+#email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp-relay.brevo.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.getenv("BREVO_USERNAME", "rzp_test_XXXXXXXXXXXX")
+EMAIL_HOST_PASSWORD = os.getenv("BREVO_PASSWORD", "rzp_test_XXXXXXXXXXXX")
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'care@dailydelish.shop'  # Should match verified sender
+
+
+#celery settings
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SCHEDULER = 'json'
+CELERY_ENABLE_UTC = False
+CELERY_TIMEZONE = 'Asia/Kolkata'
+CELERY_RESULT_BACKEND = 'django-db'
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -245,7 +266,8 @@ ACCOUNT_USERNAME_REQUIRED = False
 SOCIALACCOUNT_ADAPTER = 'custom_auth.adapters.MySocialAccountAdapter'
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 
 
 # AWS Settings

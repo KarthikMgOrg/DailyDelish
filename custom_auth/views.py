@@ -104,5 +104,8 @@ class RegisterView(APIView):
                 country=data['address']['country'],
                 is_default=True
             )
-
+        
+        #send welcome mail
+        from .tasks import send_welcome_email
+        send_welcome_email.delay(data['email'])
         return Response({"message": "User registered successfully"}, status=status.HTTP_201_CREATED)
