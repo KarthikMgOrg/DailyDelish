@@ -11,7 +11,7 @@ from order_details.models import OrderDetails
 from subscriptions.models import Subscriptions
 from datetime import datetime
 from rest_framework import serializers
-from products.serializers import ProductSerializer
+from .tasks import order_placed_email
 
 class OrderSerializer(ModelSerializer):
     items = OrderDetailsSerializer(many=True, write_only=True)
@@ -61,9 +61,10 @@ class OrderSerializer(ModelSerializer):
                 SubscriptionItems.objects.create(
                     quantity=item['quantity'], product=item['product_id'], subscription_id=subscription)
 
-            
+        
             return order
-
+        #notify user via email
+        order_placed_email(self.context['request'].email)
         # return super().create(validated_data)
 
 
