@@ -11,8 +11,8 @@ import {
 import { Button } from "./ui/button";
 
 import Image from "next/image";
-import orange_banner from "@/../public/orange_banner.avif";
-import avacado_banner from "@/../public/avacado_banner.avif";
+import orange_banner from "@/../public/orange_banner.png";
+import avacado_banner from "@/../public/avacado_banner.png";
 
 export default function Banner() {
   return (

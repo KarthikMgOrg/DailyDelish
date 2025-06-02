@@ -41,7 +41,7 @@ export default function Orders() {
     async function getuserOrderDetails() {
       try {
         if (userData) {
-          let userId = userData.id
+          const userId = userData.id
           const resp = await userOrderDetails(userId);
           setOrderDetailsData(resp.data.results)
           console.log(OrderDetailsData, " is the orderDetailsData");

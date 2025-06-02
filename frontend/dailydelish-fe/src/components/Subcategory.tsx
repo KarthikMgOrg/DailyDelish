@@ -1,10 +1,10 @@
 import Image from "next/image";
-import fruitsSubCat from "@/../public/fruits_subcat.avif";
-import dairySubCat from "@/../public/dairy_subcat.avif";
-import attaSubCat from "@/../public/atta_subcat.avif";
-import meatSubCat from "@/../public/meat_subcat.avif";
-import masalaSubCat from "@/../public/masala_subcat.avif";
-import teaCoffeeSubCat from "@/../public/tea_coffee_subcat.avif";
+import fruitsSubCat from "@/../public/fruits_subcat.png";
+import dairySubCat from "@/../public/dairy_subcat.png";
+import attaSubCat from "@/../public/atta_subcat.png";
+import meatSubCat from "@/../public/meat_subcat.png";
+import masalaSubCat from "@/../public/masala_subcat.png";
+import teaCoffeeSubCat from "@/../public/tea_coffee_subcat.png";
 
 const subCats = [
   fruitsSubCat,

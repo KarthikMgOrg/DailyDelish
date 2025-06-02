@@ -15,7 +15,7 @@ interface useUIStoreState {
 
 export const useUIStore = create<useUIStoreState>()(
   devtools(
-    (set, get) => ({
+    (set) => ({
       isLoginModalOpen: false,
       openLoginModal: () => set({ isLoginModalOpen: true }),
       closeLoginModal: () => set({ isLoginModalOpen: false }),

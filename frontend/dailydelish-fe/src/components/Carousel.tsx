@@ -12,9 +12,9 @@ import {
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-import carousel_1 from "@/../public/carousel_4.avif";
-import carousel_2 from "@/../public/carousel_5.avif";
-import carousel_3 from "@/../public/carousel_6.avif";
+import carousel_1 from "@/../public/carousel_4.png";
+import carousel_2 from "@/../public/carousel_5.png";
+import carousel_3 from "@/../public/carousel_6.png";
 
 const images = [carousel_1, carousel_2, carousel_3];
 

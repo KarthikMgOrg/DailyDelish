@@ -11,9 +11,9 @@ import {
 import { Button } from "./ui/button";
 
 import Image from "next/image";
-import appleCategory from "@/../public/apple_category.avif";
-import carrotCategory from "@/../public/carrots_category.avif";
-import spinachCategory from "@/../public/spinach_category.avif";
+import appleCategory from "@/../public/apple_category.png";
+import carrotCategory from "@/../public/carrots_category.png";
+import spinachCategory from "@/../public/spinach_category.png";
 
 const categoryImages = [appleCategory, carrotCategory, spinachCategory];
 const categoryTags = [

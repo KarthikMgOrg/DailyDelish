@@ -1,9 +1,6 @@
 import { create } from "zustand"
 import { devtools } from "zustand/middleware";
 
-type ScheduleType = 'daily' | 'weekly' | 'monthly';
-
-
 interface SubscriptionStore {
     subscriptions: Record<number, string>;
     setSchedule: (productId: number, schedule: string) => void;
