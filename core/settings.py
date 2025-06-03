@@ -149,10 +149,10 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://localhost:3001"]
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://localhost:3001", "http://0.0.0.0:3000"]
 
 # For CSRF
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://0.0.0.0:3000"]
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Project API',
@@ -200,7 +200,7 @@ DATABASES = {
         'NAME': 'daily-delish-local',
         'USER': 'postgres',
         'PASSWORD': '',
-        'HOST': '127.0.0.1',
+        'HOST': 'host.docker.internal',
         'PORT': 5432,
     }
 }
