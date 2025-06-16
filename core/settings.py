@@ -200,7 +200,8 @@ DATABASES = {
         'NAME': 'daily-delish-local',
         'USER': 'postgres',
         'PASSWORD': '',
-        'HOST': 'host.docker.internal',
+        # 'HOST': 'host.docker.internal',
+        'HOST': 'localhost',
         'PORT': 5432,
     }
 }

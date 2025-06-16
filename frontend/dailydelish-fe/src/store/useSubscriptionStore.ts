@@ -9,15 +9,18 @@ interface SubscriptionStore {
 
 export const useSubscriptionStore = create<SubscriptionStore>()(
     devtools(
-        (set, get) => ({
+        (set) => ({
             subscriptions: {},
-            setSchedule: async (productId, schedule) => {
+            setSchedule: (productId, schedule) => {
+                console.log("Setting schedule:", { productId, schedule });
                 set((state) => ({
                     subscriptions: {
-                        ...state.subscriptions,
-                        [productId]:schedule
+                      ...state.subscriptions,
+                      [productId]: schedule
                     }
-                }))
+                    
+                })
+                )
             }
         }),
         {

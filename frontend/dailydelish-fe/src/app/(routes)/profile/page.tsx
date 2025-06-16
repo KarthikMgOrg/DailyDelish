@@ -2,6 +2,7 @@
 
 import { userDetails } from "@/services/authService";
 import { useEffect, useState } from "react";
+import SubIncDecButton from "@/components/SubIncDecButton";
 
 
 import {userDataType} from "@/types/userType"
@@ -37,6 +38,7 @@ export default function Profile() {
             <span className="ml-3">{userData?.delivery_address}</span>
           </div>
         </div>
+        {<SubIncDecButton schedule="weekly" productId={1044}/>}
       </main>
     </div>
   );

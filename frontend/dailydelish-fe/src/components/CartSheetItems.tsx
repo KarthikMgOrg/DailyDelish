@@ -25,7 +25,7 @@ export default function CartSheetItems() {
                   width={50}
                   height={50}
                 ></Image>
-                <p>{item.product.name}</p>
+                <p>{item.product.name}+</p>
                 <p>
                   <strong>₹{item.product.mrp}</strong>
                 </p>

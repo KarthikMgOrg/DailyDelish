@@ -12,7 +12,6 @@ import { useState } from "react";
 import { useProductStore } from "@/store/useProductStore";
 import { X, Timer } from "lucide-react";
 import CartSheetItems from "./CartSheetItems";
-import BillDetails from "./BillDetails";
 
 export default function CartSheet() {
   const [open, setOpen] = useState(false);
