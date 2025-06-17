@@ -46,3 +46,13 @@ export async function getVariantBySku(sku: string) {
     throw error;
   }
 }
+
+export async function searchProductByName(name: string) {
+  try {
+    const response = await publicApiClient.get(`/products/search/${name}`);
+    return response.data
+  } catch (error) {
+    console.error("Error search products: ", error);
+    throw error;
+  }
+}

@@ -23,12 +23,14 @@ class OrderSerializer(ModelSerializer):
 
     def create(self, validated_data):
         print('inside create function')
+        print(validated_data, " is the validated data")
         items_data = validated_data.pop('items', None)
         user = self.context['request'].user
         with transaction.atomic():
             # get user address id
             address_id = DeliveryAddress.objects.filter(
                 user=user.id).first()
+            print('fetched address_id')
             
             #lets create a subscription
             subscription = Subscriptions.objects.create(
@@ -38,6 +40,7 @@ class OrderSerializer(ModelSerializer):
                 end_date=datetime.now().strftime("%Y-%m-%d"),
                 next_delivery_date=datetime.now().strftime("%Y-%m-%d")
             )
+            print('created subscription')
             #second let create an order for the above subscription
             # print(validated_data)
 
@@ -46,6 +49,7 @@ class OrderSerializer(ModelSerializer):
             validated_data['subscription_id'] = subscription  # if this FK exists
 
             order = Order.objects.create(**validated_data)
+            print('created order')
             # order = Order.objects.create(
             #     order_date=validated_data['order_date'],
             #     total_amount=validated_data['total_amount'],
@@ -53,15 +57,18 @@ class OrderSerializer(ModelSerializer):
             #     subscription_id = subscription
             #     )
             for item in items_data:
+                print
                 # add order to orderDetails
                 item['order'] = order
+                print(item, " is the item")
                 OrderDetails.objects.create(**item)
+                print('added orderdetails')
 
                 #add items to subscription items
                 SubscriptionItems.objects.create(
                     quantity=item['quantity'], product=item['product_id'], subscription_id=subscription)
 
-        
+                print('added subscription items')
             return order
         #notify user via email
         order_placed_email(self.context['request'].email)
