@@ -10,7 +10,7 @@ class OrderDetails(models.Model):
     order_item_id = models.AutoField(primary_key=True)
     order = models.ForeignKey(
         to=Order, on_delete=models.CASCADE, null=False, db_column='order', related_name='items')
-    product_id = models.ForeignKey(
+    product = models.ForeignKey(
         to=Product, on_delete=models.CASCADE, null=False, db_column='product_id')
     quantity = models.IntegerField(null=False)
     price_at_order = models.DecimalField(max_digits=10, decimal_places=2,

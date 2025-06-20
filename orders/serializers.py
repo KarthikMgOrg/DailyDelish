@@ -3,6 +3,7 @@ from math import log
 from rest_framework.serializers import ModelSerializer
 
 from delivery_address.models import DeliveryAddress
+from products.serializers import ProductSerializer
 from subscription_items.models import SubscriptionItems
 from .models import Order
 from order_details.serializers import OrderDetailsSerializer
@@ -57,16 +58,17 @@ class OrderSerializer(ModelSerializer):
             #     subscription_id = subscription
             #     )
             for item in items_data:
-                print
                 # add order to orderDetails
                 item['order'] = order
+                print(item, " is the item")
+                # item['product'] = item['product']
                 print(item, " is the item")
                 OrderDetails.objects.create(**item)
                 print('added orderdetails')
 
                 #add items to subscription items
                 SubscriptionItems.objects.create(
-                    quantity=item['quantity'], product=item['product_id'], subscription_id=subscription)
+                    quantity=item['quantity'], product=item['product'], subscription_id=subscription)
 
                 print('added subscription items')
             return order
@@ -76,10 +78,9 @@ class OrderSerializer(ModelSerializer):
 
 
 class OrderDetailsSerializer(ModelSerializer):
-    items = OrderDetailsSerializer(many=True)
-    subscription_id = serializers.PrimaryKeyRelatedField(
-        queryset=Subscriptions.objects.all(), required=False)
+    items = ProductSerializer(many=True)
+
     class Meta:
-        model = Order
+        model = OrderDetails
         managed = True
         fields = '__all__'

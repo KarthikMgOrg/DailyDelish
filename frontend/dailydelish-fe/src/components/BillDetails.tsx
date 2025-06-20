@@ -49,7 +49,7 @@ export default function BillDetails({ cartAmount }: BillDetailsProps) {
           const items = Object.values(cart).map((item) => ({
             quantity: item.quantity,
             price_at_order: Number(item.product.mrp),
-            product_id: item.product.product_id,
+            product: item.product.product_id,
           }));
 
           console.log(items, " is the items");

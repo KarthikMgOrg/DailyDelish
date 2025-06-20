@@ -24,12 +24,21 @@ class OrdersListCreateAPIView(ListCreateAPIView):
 #         return JsonResponse({"data": f"Fetching orders for user_id {user_id}"})
 
 
+# class UserOrdersDetailView(ListAPIView):
+#     serializer_class = OrderDetailsSerializer
+
+#     def get_queryset(self):
+#         user_id = self.kwargs.get('user_id','')
+#         return Order.objects.filter(subscription_id__user_id=user_id).select_related('subscription_id').prefetch_related('items')
+
 class UserOrdersDetailView(ListAPIView):
-    serializer_class = OrderDetailsSerializer
+    serializer_class = OrderSerializer
 
     def get_queryset(self):
-        user_id = self.kwargs.get('user_id','')
-        return Order.objects.filter(subscription_id__user_id=user_id).select_related('subscription_id').prefetch_related('items')
+        user_id = self.kwargs.get('user_id', '')
+        return Order.objects.filter(subscription_id__user_id=user_id).select_related('subscription_id').prefetch_related('items__product')
+
+
 
     # def list(self, request, *args, **kwargs):
     #     queryset = self.get_queryset()

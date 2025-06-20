@@ -4,7 +4,7 @@ interface orderPayload {
   order_date: string;
   total_amount: number;
   items: {
-    product_id: number;
+    product: number;
     quantity: number;
   }[];
 }

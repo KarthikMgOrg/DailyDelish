@@ -13,9 +13,12 @@ class ProductSerializer(ModelSerializer):
         fields = '__all__'
 
     def get_min_price(self, obj):
+        print(obj, " is the obj")
         variant = obj.variants.order_by("mrp").first()
         return variant.mrp if variant else None
 
     def get_sku(self, obj):
+        print(obj, " is the obj")
+
         variant = obj.variants.order_by("mrp").first()
         return variant.sku if variant else None

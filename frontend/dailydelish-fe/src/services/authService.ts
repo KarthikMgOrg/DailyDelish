@@ -76,7 +76,7 @@ export async function userDetails() {
 export async function userOrderDetails(userId: number) {
   try {
     console.log(userId, " is the userId from inside userOrderDetails");
-    const response = await apiClient.get(`/orders/${userId}/`);
+    const response = await apiClient.get(`/orders/${userId}/`);   
     return response.data
   } catch (error:any) {
     error.response?.data?.detail || "Unable to perform the operation";
