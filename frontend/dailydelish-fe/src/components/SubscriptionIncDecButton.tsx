@@ -1,4 +1,4 @@
-type SubscriptionIncDecButton = {};
+type SubscriptionIncDecButton = object;
 
 export default function SubscriptionIncDecButton() {
   return (
