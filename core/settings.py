@@ -38,8 +38,8 @@ SECRET_KEY = 'django-insecure--2k5)*a@d37+9&x=7x72)68zy#d9*cukqq&-(u188@7bp0)m(w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "dailydelish.shop", "10.0.0.184"]
 
 # Application definition
 
@@ -152,8 +152,9 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://localhost:3001", "http://0.0.0.0:3000"]
-
+# CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://localhost:3001", "http://0.0.0.0:3000"]
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://localhost:3001",
+                        "http://0.0.0.0:3000", "https://dailydelish.shop", "https://10.0.0.184:3000"]
 # For CSRF
 CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://0.0.0.0:3000"]
 
