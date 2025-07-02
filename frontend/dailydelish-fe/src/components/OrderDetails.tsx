@@ -4,6 +4,10 @@ import { orderDetailsType } from "@/types/orderDetailsType";
 export default function OrderDetails({ order }: { order: orderDetailsType }) {
 
   if (!order) return <div>No Orders Found</div>;
+
+  console.log(order,  " is the input order ");
+  
+
   return (
     <div className="items-center bg-white rounded-2xl p-2 m-2 grid grid-cols-2">
       <div className="order-details">
@@ -32,12 +36,12 @@ export default function OrderDetails({ order }: { order: orderDetailsType }) {
       <div className="order-items">
         <h3>Order Items</h3>
         <div className="flex gap-2 mt-2">
-          {order.items.map((item) => (
+          {order.items && order.items.map((item) => (
             <img
               key={item.order_item_id}
               className="h-[50px] w-[50px] rounded-2xl object-cover"
-              src={item.product_id.image}
-              alt={`Product ${item.product_id.name}`}
+              src={item.product.image}
+              alt={`Product ${item.product.name}`}
             />
           ))}
         </div>

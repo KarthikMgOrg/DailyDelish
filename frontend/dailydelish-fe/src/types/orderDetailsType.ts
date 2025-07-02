@@ -40,7 +40,7 @@ export type orderDetailsType = {
     order_item_id: number;
     order: number;
     price_at_order: string;
-    product_id: {
+    product: {
       product_id: number;
       min_price: string;
       sku: string;
