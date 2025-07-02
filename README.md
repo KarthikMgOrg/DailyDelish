@@ -2,14 +2,13 @@
   <img width="197" alt="DailyDelishFavicon" src="https://github.com/user-attachments/assets/bcbf0bc3-7c96-456e-83a9-ef9bfe8a482e" />
 </p>
 
-
-
-
 <p align="center">
   <img width="45%" style="margin: 10px; alt="Screenshot 2025-07-02 at 7 30 54 PM" src="https://github.com/user-attachments/assets/b05ab692-eab3-4826-b147-43fcd1392aa2" />
   <img width="45%" style="margin: 10px; alt="Screenshot 2025-07-02 at 7 30 54 PM" src="https://github.com/user-attachments/assets/cd2f4ca9-da32-42da-867a-1788ec29609f" /><br>
   <img width="45%" style="margin: 10px; alt="Screenshot 2025-07-02 at 7 30 54 PM" src="https://github.com/user-attachments/assets/32d7eab6-8fd3-4cdd-a65e-85b5f3d7fb84" />
-  <img width="45%" style="margin: 10px; alt="Screenshot 2025-07-02 at 7 30 54 PM" src="https://github.com/user-attachments/assets/7226c8a5-05c5-454a-806e-979a95c3eae7" />
+  <img width="45%" style="margin: 10px; alt="Screenshot 2025-07-02 at 7 30 54 PM" src="https://github.com/user-attachments/assets/7226c8a5-05c5-454a-806e-979a95c3eae7" /><br>
+  <img width="45%" style="margin: 10px; alt="Screenshot 2025-07-02 at 7 30 54 PM" src="https://github.com/user-attachments/assets/ab1d5632-2bb0-4849-8b9e-2ec4af11d5c8" />
+  <img width="45%" style="margin: 10px; alt="Screenshot 2025-07-02 at 7 30 54 PM" src="https://github.com/user-attachments/assets/8c4cb068-1b72-4d21-ab4d-ce5c09cf9ae2" />
 </p>
 
 DailyDelish is a **subscription-based fruits and vegetables web app** built with Django and Django Rest Framework (DRF). The platform allows users to subscribe to fresh, high-quality produce and manage their deliveries seamlessly.
