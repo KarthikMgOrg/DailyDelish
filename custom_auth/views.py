@@ -1,5 +1,4 @@
-import stat
-from weakref import ref
+from django.conf import settings
 from django.shortcuts import render
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.response import Response
@@ -40,7 +39,7 @@ class CookieTokenObtainPairView(TokenObtainPairView):
                 httponly=True,
                 secure=False,
                 samesite="Lax",
-                max_age=7*24*3600
+                max_age=7*24*3600,
             )
             response.set_cookie(
                 key="access",
@@ -48,7 +47,8 @@ class CookieTokenObtainPairView(TokenObtainPairView):
                 httponly=True,
                 secure=False,
                 samesite="Lax",
-                max_age=7*24*3600
+                max_age=7*24*3600,
+                path='/'
 
             )
         return response

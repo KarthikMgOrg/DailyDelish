@@ -3,6 +3,7 @@ from math import log
 from rest_framework.serializers import ModelSerializer
 
 from delivery_address.models import DeliveryAddress
+from products.models import Product
 from products.serializers import ProductSerializer
 from subscription_items.models import SubscriptionItems
 from .models import Order
@@ -15,7 +16,8 @@ from rest_framework import serializers
 from .tasks import order_placed_email
 
 class OrderSerializer(ModelSerializer):
-    items = OrderDetailsSerializer(many=True, write_only=True)
+    items = OrderDetailsSerializer(many=True, read_only=True)
+    items_data = serializers.ListField(write_only=True, required=False)
     subscription_id = serializers.PrimaryKeyRelatedField(
         queryset=Subscriptions.objects.all(), required=False, write_only=True)
     class Meta:
@@ -25,7 +27,7 @@ class OrderSerializer(ModelSerializer):
     def create(self, validated_data):
         print('inside create function')
         print(validated_data, " is the validated data")
-        items_data = validated_data.pop('items', None)
+        items_data = validated_data.pop('items_data', None)
         user = self.context['request'].user
         with transaction.atomic():
             # get user address id
@@ -60,12 +62,9 @@ class OrderSerializer(ModelSerializer):
             for item in items_data:
                 # add order to orderDetails
                 item['order'] = order
-                print(item, " is the item")
                 # item['product'] = item['product']
-                print(item, " is the item")
+                item['product'] = Product.objects.get(product_id=item['product'])
                 OrderDetails.objects.create(**item)
-                print('added orderdetails')
-
                 #add items to subscription items
                 SubscriptionItems.objects.create(
                     quantity=item['quantity'], product=item['product'], subscription_id=subscription)

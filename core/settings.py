@@ -15,6 +15,9 @@ from datetime import timedelta
 from pathlib import Path
 from PIL import Image
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID", "rzp_test_XXXXXXXXXXXX")
 RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET", "your_secret_key")
@@ -197,12 +200,13 @@ CELERY_RESULT_BACKEND = 'django-db'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'daily-delish-local',
-        'USER': 'postgres',
-        'PASSWORD': '',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
         # 'HOST': 'host.docker.internal',
-        'HOST': 'localhost',
-        'PORT': 5432,
+        # 'HOST': 'localhost',
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 

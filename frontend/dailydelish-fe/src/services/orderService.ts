@@ -3,7 +3,7 @@ import apiClient from "@/lib/apiClient";
 interface orderPayload {
   order_date: string;
   total_amount: number;
-  items: {
+  items_data: {
     product: number;
     quantity: number;
   }[];

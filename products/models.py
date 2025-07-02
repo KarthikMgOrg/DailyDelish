@@ -26,4 +26,5 @@ class Product(models.Model):
         db_table = 'products'
 
     def __str__(self):
+        print(self.name, type(self.name), 'products')
         return self.name

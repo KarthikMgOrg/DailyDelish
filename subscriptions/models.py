@@ -40,4 +40,4 @@ class Subscriptions(models.Model):
         managed = True
 
     def __str__(self):
-        return self.subscription_id
+        return f"{self.subscription_id}"

@@ -74,7 +74,7 @@ export default function SubscriptionModal() {
               const orderPayload = {
                 order_date: formattedDate,
                 total_amount: res.data.amount,
-                items: items,
+                items_data: items,
               };
               console.log(orderPayload, " is the orderPayload");
 

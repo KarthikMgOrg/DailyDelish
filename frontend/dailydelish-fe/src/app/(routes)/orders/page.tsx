@@ -23,7 +23,7 @@ export default function Orders() {
     useState<orderDetailsType[]|null>(null);
 
   useEffect(() => {
-    console.log("use effect called!");
+    console.log("use effect called to getUserDetails");
     async function getUserDetails() {
       try {
         const resp = await userDetails();        
@@ -57,7 +57,7 @@ export default function Orders() {
   }, [userData]);
 
   useEffect(() => {
-    console.log(OrderDetailsData, " is the orderDetailsData")
+    console.log(OrderDetailsData, " is the orderDetailsData from inside useEffect")
   }, [OrderDetailsData])
 
 
@@ -66,8 +66,8 @@ export default function Orders() {
       <main>
         <div className="mt-1 items-center ">
           {OrderDetailsData && OrderDetailsData.length > 0 ? (
-            OrderDetailsData.map((order) => (
-              <OrderDetails key={order.order_id} payload={order} />
+            OrderDetailsData.map((order) => (              
+              <OrderDetails key={order.order_id} order={order} />
             ))
           ) : (
             <p className="text-center">No orders found</p>
