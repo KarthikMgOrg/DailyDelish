@@ -27,9 +27,8 @@ DailyDelish is a **subscription-based fruits and vegetables web app** built with
 - User authentication & subscription management
 - Browse and select fresh fruits & vegetables
 - Custom delivery schedules
-- Payment integration (Stripe/Razorpay/PayPal)
+- Payment integration (Razorpay)
 - Order tracking & history
-- Admin dashboard for managing products & subscriptions
 - RESTful API for mobile & frontend integrations
 
 ## Tech Stack
@@ -38,7 +37,8 @@ DailyDelish is a **subscription-based fruits and vegetables web app** built with
 - **Frontend**: (Optional) React, Vue.js, or any modern framework
 - **Authentication**: OAuth2, JWT
 - **Payments**: Stripe / Razorpay / PayPal
-- **Deployment**: AWS, Heroku, or DigitalOcean
+- **Containerization**: Docker
+- **Deployment**: AWS
 
 ## Installation & Setup
 
