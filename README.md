@@ -33,10 +33,10 @@ DailyDelish is a **subscription-based fruits and vegetables web app** built with
 
 ## Tech Stack
 - **Backend**: Django, Django Rest Framework (DRF)
-- **Database**: PostgreSQL / MySQL
-- **Frontend**: (Optional) React, Vue.js, or any modern framework
+- **Database**: PostgreSQL
+- **Frontend**: React, Next.js,
 - **Authentication**: OAuth2, JWT
-- **Payments**: Stripe / Razorpay / PayPal
+- **Payments**: Razorpay
 - **Containerization**: Docker
 - **Deployment**: AWS
 
