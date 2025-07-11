@@ -179,7 +179,10 @@ DEFAULT_FROM_EMAIL = 'care@dailydelish.shop'  # Should match verified sender
 
 
 #celery settings
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
+#local
+# CELERY_BROKER_URL = 'redis://localhost:6379/0'
+#docker
+CELERY_BROKER_URL = os.getenv('REDIS_URL', 'redis://localhost:6379/0')
 CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SCHEDULER = 'json'

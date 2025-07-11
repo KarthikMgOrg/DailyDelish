@@ -1,0 +1,30 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+.env
+*.env
+*.pem
+
+# VCS
+.git/
+.gitignore
+venv/
+
+# Docker
+Dockerfile*
+docker-compose*
+
+# macOS
+.DS_Store
+
+# Node modules (if any)
+node_modules/
+npm-debug.log
+
+# IDEs
+.vscode/
+.idea/

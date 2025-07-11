@@ -162,3 +162,4 @@ cython_debug/
 frontend/dailydelish-fe/out*
 daily_delish_*.sql
 daily_delish_*.dump
+dailydelish_data_only.sql

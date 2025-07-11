@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+  django-server:
+    restart: always
+    container_name: dailydelish-be
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    command: >
+      sh -c "gunicorn core.asgi:application --bind 0.0.0.0:8000 -k uvicorn.workers.UvicornWorker"
+    volumes:
+      - ./:/usr/src/app
+    env_file:
+      - .env
+    depends_on:
+      - redis
+  celery-worker:
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile.celery
+    command: celery -A core worker -l INFO
+    volumes:
+      - ./:/usr/src/app
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      - django-server
+  redis:
+    image: redis:alpine
+    restart: always
+    ports:
+      - "6379:6379"
